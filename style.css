@@ -1,20 +1,29 @@
 /* ============================================================
-   LUXE ONKEY v3 — Premium Design System
+   LUXE ONKEY v4 — Logo colors + Premium refinements
    ============================================================ */
 
 :root {
-  --navy:       #0c1f2d;
-  --navy-2:     #152b3e;
-  --navy-3:     #1e3a52;
+  /* Palette exacte du logo */
+  --navy:       #0B1D3A;   /* fond très sombre du logo */
+  --navy-2:     #152D50;   /* intermédiaire */
+  --navy-3:     #1A3A7A;   /* bleu ruban du logo */
+  --navy-4:     #0D2456;   /* bleu profond */
+
+  /* Or métallique du logo */
   --gold:       #C9A84C;
-  --gold-2:     #dfc070;
-  --gold-3:     #a8862d;
-  --cream:      #faf8f4;
-  --cream-2:    #f3f0ea;
-  --cream-3:    #e8e3d8;
-  --text:       #1a1612;
-  --text-2:     #4a4540;
-  --text-3:     #8a8278;
+  --gold-2:     #E8CC6A;   /* reflet brillant */
+  --gold-3:     #8B6914;   /* or sombre */
+  --gold-4:     #D4AF50;   /* or texte */
+
+  /* Fonds crème */
+  --cream:      #FAF8F5;
+  --cream-2:    #F2EFE8;
+  --cream-3:    #E5E0D4;
+
+  /* Texte */
+  --text:       #18140F;
+  --text-2:     #453F36;
+  --text-3:     #8A8070;
   --white:      #ffffff;
 
   --serif:  'Cormorant Garamond', Georgia, serif;
@@ -23,9 +32,12 @@
   --ease:     cubic-bezier(.4,0,.2,1);
   --ease-out: cubic-bezier(0,0,.2,1);
 
-  --r:   10px;
-  --r2:  20px;
-  --r3:  32px;
+  --r:   8px;
+  --r2:  18px;
+  --r3:  28px;
+
+  /* Or dégradé — identique au logo */
+  --grad-gold: linear-gradient(135deg, #8B6914 0%, #C9A84C 35%, #E8CC6A 60%, #B8922A 100%);
 }
 
 /* ── Reset ── */
@@ -57,12 +69,23 @@ textarea { resize: vertical; }
 
 /* ── Eyebrows ── */
 .eyebrow-gold {
-  display: inline-block;
-  font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: .8rem;
+  margin-bottom: .9rem;
 }
-.eyebrow-light { color: var(--gold-2); }
+.eyebrow-gold::before {
+  content: '';
+  display: inline-block; width: 28px; height: 1px;
+  background: linear-gradient(90deg, var(--gold-3), var(--gold));
+  flex-shrink: 0;
+}
+.eyebrow-light {
+  color: var(--gold-2);
+}
+.eyebrow-light::before {
+  background: linear-gradient(90deg, rgba(201,168,76,.3), var(--gold-2));
+}
 
 /* ── Display titles ── */
 .display-title {
@@ -73,9 +96,20 @@ textarea { resize: vertical; }
   color: var(--navy);
   letter-spacing: -.01em;
 }
-.display-title em { font-style: italic; color: var(--gold); font-weight: 400; }
+.display-title em {
+  font-style: italic; font-weight: 400;
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .display-title.white { color: var(--white); }
-.display-title.white em { color: var(--gold-2); }
+.display-title.white em {
+  background: linear-gradient(135deg, #C9A84C 0%, #E8CC6A 50%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .section-h2 {
   font-family: var(--serif);
@@ -86,7 +120,13 @@ textarea { resize: vertical; }
   letter-spacing: -.01em;
   margin: .5rem 0 1.1rem;
 }
-.section-h2 em { font-style: italic; color: var(--gold); }
+.section-h2 em {
+  font-style: italic;
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .section-head { text-align: center; margin-bottom: 4rem; }
 .section-sub {
@@ -122,26 +162,16 @@ textarea { resize: vertical; }
   display: flex; align-items: center; justify-content: space-between; gap: 2rem;
 }
 
-.logo { display: flex; align-items: center; gap: .65rem; flex-shrink: 0; }
-.logo-mark {
-  width: 40px; height: 40px;
-  background: var(--navy); color: var(--white);
-  font-family: var(--serif); font-weight: 600; font-size: 1.05rem;
-  letter-spacing: .04em;
-  border-radius: var(--r);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+.logo { display: flex; align-items: center; flex-shrink: 0; }
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  /* Sur fond clair, le SVG s'adapte */
+  filter: none;
+  transition: opacity .2s;
 }
-.logo-text {
-  font-family: var(--sans); font-size: .92rem; font-weight: 600;
-  color: var(--navy); line-height: 1;
-  letter-spacing: .04em;
-}
-.logo-text span { color: var(--gold); }
-.logo-text small {
-  display: block; font-size: .52rem; letter-spacing: .22em;
-  color: var(--text-3); font-weight: 400; margin-top: 2px;
-}
+.logo:hover .logo-img { opacity: .85; }
 
 .nav-links { display: flex; gap: .1rem; flex: 1; justify-content: center; }
 .nav-links a {
@@ -201,12 +231,9 @@ textarea { resize: vertical; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
 .hero-veil {
   position: absolute; inset: 0;
-  background: linear-gradient(
-    155deg,
-    rgba(12,31,45,.92) 0%,
-    rgba(21,43,62,.85) 40%,
-    rgba(12,31,45,.88) 100%
-  );
+  background:
+    linear-gradient(155deg, rgba(11,29,58,.94) 0%, rgba(21,58,122,.80) 50%, rgba(11,29,58,.92) 100%),
+    linear-gradient(to bottom, transparent 70%, rgba(11,29,58,.5) 100%);
 }
 
 .hero-body {
@@ -240,15 +267,18 @@ textarea { resize: vertical; }
 }
 .hero-h1 em {
   font-style: italic; font-weight: 400;
-  color: var(--gold-2);
-  /* Gold underline decoration */
+  /* Or dégradé métallique identique au logo */
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   position: relative;
 }
 .hero-h1 em::after {
   content: '';
-  position: absolute; bottom: -3px; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-2), transparent);
+  position: absolute; bottom: -4px; left: 0; right: 15%;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--gold-3), var(--gold-2), transparent);
   border-radius: 2px;
 }
 
@@ -263,16 +293,17 @@ textarea { resize: vertical; }
 
 .btn-primary-hero {
   display: inline-flex; align-items: center; gap: .6rem;
-  background: var(--gold); color: var(--white);
-  font-size: .9rem; font-weight: 700; letter-spacing: .03em;
-  padding: 1rem 2.2rem; border-radius: 50px;
-  transition: all .25s var(--ease);
-  box-shadow: 0 0 0 0 rgba(201,168,76,0);
+  background: var(--grad-gold); color: var(--white);
+  font-size: .9rem; font-weight: 700; letter-spacing: .04em;
+  padding: 1.05rem 2.4rem; border-radius: 50px;
+  transition: all .28s var(--ease);
+  box-shadow: 0 6px 24px rgba(201,168,76,.35);
+  text-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
 .btn-primary-hero:hover {
-  background: var(--gold-3);
+  filter: brightness(1.1);
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(201,168,76,.45);
+  box-shadow: 0 14px 36px rgba(201,168,76,.5);
 }
 .btn-ghost-hero {
   display: inline-flex; align-items: center; gap: .6rem;
@@ -346,7 +377,10 @@ textarea { resize: vertical; }
 /* ============================================================
    STATS BAND
    ============================================================ */
-.stats-band { background: var(--navy); }
+.stats-band {
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-4) 50%, var(--navy) 100%);
+  border-top: 1px solid rgba(201,168,76,.15);
+}
 .stats-inner {
   max-width: 1100px; margin-inline: auto;
   display: flex; align-items: stretch;
@@ -391,18 +425,20 @@ textarea { resize: vertical; }
 }
 .pain-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-2));
+  background: var(--grad-gold);
   transform: scaleX(0); transform-origin: left;
-  transition: transform .4s var(--ease);
+  transition: transform .45s var(--ease);
+  border-radius: 0 0 2px 2px;
 }
 .pain-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(12,31,45,.1); }
 .pain-card:hover::before { transform: scaleX(1); }
 
 .pain-icon {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-3), var(--gold));
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--grad-gold);
   display: flex; align-items: center; justify-content: center;
   color: var(--white); font-size: 1.2rem; margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(201,168,76,.3);
 }
 .pain-num {
   font-family: var(--serif); font-size: 3.5rem; font-weight: 600;
@@ -706,13 +742,15 @@ textarea { resize: vertical; }
 .offre-promise strong { display: block; color: var(--white); font-size: .92rem; margin-bottom: .35rem; }
 .btn-gold-full {
   display: flex; align-items: center; justify-content: center; gap: .5rem;
-  background: var(--gold); color: var(--white);
-  font-size: .88rem; font-weight: 700; letter-spacing: .03em;
+  background: var(--grad-gold); color: var(--white);
+  font-size: .88rem; font-weight: 700; letter-spacing: .04em;
   padding: .9rem 1.5rem; border-radius: 50px;
-  margin-top: 1.8rem; transition: all .25s var(--ease);
+  margin-top: 1.8rem; transition: all .28s var(--ease);
   cursor: pointer; border: none; font-family: var(--sans); width: 100%;
+  text-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 4px 18px rgba(201,168,76,.25);
 }
-.btn-gold-full:hover { background: var(--gold-3); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,.4); }
+.btn-gold-full:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,168,76,.45); }
 
 .offre-features h3 {
   font-family: var(--serif); font-size: 1.8rem; font-weight: 600;
@@ -1021,17 +1059,12 @@ textarea { resize: vertical; }
   display: grid; grid-template-columns: 2fr 1fr 1fr 1.6fr; gap: 3.5rem;
 }
 
-.footer-logo { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.1rem; }
-.logo-mark-sm {
-  width: 36px; height: 36px; background: var(--navy-3); color: var(--white);
-  font-family: var(--serif); font-weight: 600; font-size: .95rem;
-  border-radius: var(--r); display: flex; align-items: center; justify-content: center;
+.footer-logo { margin-bottom: 1.25rem; }
+.footer-logo-img {
+  height: 48px; width: auto;
+  /* Légèrement brightened pour bien ressortir sur fond sombre */
+  filter: brightness(1.15) contrast(1.05);
 }
-.logo-text-sm {
-  font-size: .9rem; font-weight: 600; color: var(--white); letter-spacing: .04em; line-height: 1;
-}
-.logo-text-sm span { color: var(--gold); }
-.logo-text-sm small { display: block; font-size: .5rem; letter-spacing: .22em; color: rgba(255,255,255,.25); font-weight: 400; margin-top: 2px; }
 
 .footer-brand p {
   font-size: .84rem; color: rgba(255,255,255,.32); line-height: 1.75;
