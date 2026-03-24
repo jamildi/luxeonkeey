@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxe Onkey — Conciergerie Premium au Maroc | Gestion Location Courte Durée</title>
+  <meta name="description" content="Luxe Onkey gère votre bien au Maroc à votre place. Location courte durée, Airbnb, Booking — service premium pour propriétaires et MRE. Audit gratuit." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <span class="logo__mark">LO</span>
+      <span class="logo__text">
+        <b>LUXE</b> ONKEY
+        <small>GROUP</small>
+      </span>
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#pourquoi">Pourquoi nous</a>
+      <a href="#services">Services</a>
+      <a href="#processus">Comment ça marche</a>
+      <a href="#offre">Notre offre</a>
+      <a href="#temoignages">Avis</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a href="#audit" class="nav__cta">
+      Audit gratuit
+    </a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav__mobile" id="navMobile">
+    <a href="#pourquoi">Pourquoi nous</a>
+    <a href="#services">Services</a>
+    <a href="#processus">Comment ça marche</a>
+    <a href="#offre">Notre offre</a>
+    <a href="#temoignages">Avis clients</a>
+    <a href="#faq">FAQ</a>
+    <a href="#audit" class="nav__mobile-cta">Demander un audit gratuit</a>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero" id="accueil">
+  <div class="hero__bg">
+    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&q=85" alt="Appartement de luxe Maroc" />
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__badge">
+      <i class="fas fa-map-marker-alt"></i>
+      Maroc · Conciergerie Premium
+    </div>
+
+    <h1 class="hero__title">
+      Vos voyageurs<br />
+      <em>méritent le meilleur.</em><br />
+      Vous méritez<br />
+      <em>la liberté.</em>
+    </h1>
+
+    <p class="hero__sub">
+      Luxe Onkey gère intégralement votre bien en location courte et longue durée.
+      Vous encaissez. Nous faisons tout le reste.
+    </p>
+
+    <div class="hero__actions">
+      <a href="#audit" class="btn btn--gold">
+        Demander un audit gratuit
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="#services" class="btn btn--ghost">
+        Découvrir nos services
+      </a>
+    </div>
+  </div>
+
+  <!-- Bénéfices strip -->
+  <div class="hero__benefits">
+    <div class="benefit">
+      <i class="fas fa-clock"></i>
+      <span>Gagnez du temps</span>
+    </div>
+    <div class="benefit__sep"></div>
+    <div class="benefit">
+      <i class="fas fa-trending-up"></i>
+      <span>Maximisez vos revenus</span>
+    </div>
+    <div class="benefit__sep"></div>
+    <div class="benefit">
+      <i class="fas fa-broom"></i>
+      <span>Entretien premium</span>
+    </div>
+    <div class="benefit__sep"></div>
+    <div class="benefit">
+      <i class="fas fa-chart-line"></i>
+      <span>Rentabilité optimisée</span>
+    </div>
+    <div class="benefit__sep"></div>
+    <div class="benefit">
+      <i class="fas fa-shield-alt"></i>
+      <span>Tranquillité d'esprit</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     STATS
+══════════════════════════════════════ -->
+<section class="stats">
+  <div class="stats__grid">
+    <div class="stat">
+      <div class="stat__num"><span class="count" data-to="50">0</span>+</div>
+      <div class="stat__label">Biens gérés</div>
+    </div>
+    <div class="stat__div"></div>
+    <div class="stat">
+      <div class="stat__num"><span class="count" data-to="4" data-dec="1">0</span>.9 <small>/ 5</small></div>
+      <div class="stat__label">Note moyenne Airbnb</div>
+    </div>
+    <div class="stat__div"></div>
+    <div class="stat">
+      <div class="stat__num"><span class="count" data-to="98">0</span>%</div>
+      <div class="stat__label">Clients satisfaits</div>
+    </div>
+    <div class="stat__div"></div>
+    <div class="stat">
+      <div class="stat__num"><span class="count" data-to="32500" data-sep="true">0</span> <small>Dhs</small></div>
+      <div class="stat__label">Revenus moyens / mois</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     POURQUOI LUXE ONKEY — 3 blocs alternés
+══════════════════════════════════════ -->
+<section class="why" id="pourquoi">
+  <div class="why__intro">
+    <span class="eyebrow">Pourquoi Luxe Onkey ?</span>
+    <h2 class="h2">On s'occupe de tout.<br /><em>Vraiment tout.</em></h2>
+  </div>
+
+  <!-- Bloc 1 — image gauche -->
+  <div class="why__block">
+    <div class="why__image" data-aos="fade-right">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Appartement géré" />
+      <div class="why__image-badge">
+        <i class="fas fa-clock"></i>
+        <span>Zéro contrainte</span>
+      </div>
+    </div>
+    <div class="why__copy" data-aos="fade-left">
+      <span class="eyebrow">Libérez votre temps</span>
+      <h3>Ne passez plus<br />vos week-ends à gérer.</h3>
+      <p>Entrées et sorties, ménage entre chaque séjour, gestion du linge, consommables, maintenance — tout est pris en charge de A à Z. Votre seule mission : encaisser votre virement mensuel.</p>
+      <ul class="check-list">
+        <li><i class="fas fa-check"></i> Check-in &amp; check-out gérés 7j/7</li>
+        <li><i class="fas fa-check"></i> Ménage professionnel entre chaque séjour</li>
+        <li><i class="fas fa-check"></i> Maintenance et urgences prises en charge</li>
+        <li><i class="fas fa-check"></i> Idéal pour les MRE à distance</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bloc 2 — image droite -->
+  <div class="why__block why__block--reverse">
+    <div class="why__image" data-aos="fade-left">
+      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="Revenus maximisés" />
+      <div class="why__image-badge why__image-badge--gold">
+        <i class="fas fa-arrow-trend-up"></i>
+        <span>+40% de revenus</span>
+      </div>
+    </div>
+    <div class="why__copy" data-aos="fade-right">
+      <span class="eyebrow">Maximisez vos revenus</span>
+      <h3>Votre bien rapporte<br />à son plein potentiel.</h3>
+      <p>Tarification dynamique selon la demande, optimisation du référencement Airbnb et Booking, annonces professionnelles avec photos HD. Nos propriétaires gagnent en moyenne <strong>40% de revenus supplémentaires</strong> dès le premier mois.</p>
+      <ul class="check-list">
+        <li><i class="fas fa-check"></i> Prix ajustés en temps réel (revenue management)</li>
+        <li><i class="fas fa-check"></i> Annonces optimisées SEO sur toutes les plateformes</li>
+        <li><i class="fas fa-check"></i> Photos professionnelles incluses</li>
+        <li><i class="fas fa-check"></i> Rapport mensuel de performance détaillé</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bloc 3 — image gauche -->
+  <div class="why__block">
+    <div class="why__image" data-aos="fade-right">
+      <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80" alt="Tranquillité propriétaire" />
+      <div class="why__image-badge">
+        <i class="fas fa-shield-halved"></i>
+        <span>100% serein</span>
+      </div>
+    </div>
+    <div class="why__copy" data-aos="fade-left">
+      <span class="eyebrow">Tranquillité totale</span>
+      <h3>Dormez bien.<br />Votre bien est entre de bonnes mains.</h3>
+      <p>Votre propriété reste impeccable en permanence. Les risques de dégradations, les urgences techniques, les conflits avec les voyageurs — nous gérons tout à votre place avec la discrétion et l'exigence d'une conciergerie de luxe.</p>
+      <ul class="check-list">
+        <li><i class="fas fa-check"></i> Inspection après chaque départ</li>
+        <li><i class="fas fa-check"></i> Gestion des réclamations voyageurs</li>
+        <li><i class="fas fa-check"></i> Suivi maintenance préventive</li>
+        <li><i class="fas fa-check"></i> Disponibles 7j/7 pour vous et vos voyageurs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SERVICES — avec notes Airbnb
+══════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nos prestations</span>
+      <h2 class="h2">Chaque service noté<br /><em>par vos voyageurs.</em></h2>
+      <p class="section-sub">Des scores réels, mesurés sur Airbnb. Pas des promesses — des résultats.</p>
+    </div>
+
+    <div class="services__grid">
+
+      <div class="svc-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="svc-card__img">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=80" alt="Communication voyageurs" />
+        </div>
+        <div class="svc-card__body">
+          <div class="svc-card__rating">
+            <span class="rating__stars">★★★★★</span>
+            <span class="rating__score">5,0</span>
+            <span class="rating__platform"><i class="fab fa-airbnb"></i> Airbnb</span>
+          </div>
+          <h3>Communication voyageurs</h3>
+          <p>Messages d'accueil personnalisés, réponse sous 1h, résolution immédiate de chaque incident en cours de séjour.</p>
+        </div>
+      </div>
+
+      <div class="svc-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="svc-card__img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Check-in check-out" />
+        </div>
+        <div class="svc-card__body">
+          <div class="svc-card__rating">
+            <span class="rating__stars">★★★★★</span>
+            <span class="rating__score">5,0</span>
+            <span class="rating__platform"><i class="fab fa-airbnb"></i> Airbnb</span>
+          </div>
+          <h3>Entrées &amp; sorties</h3>
+          <p>Accueil personnalisé de vos voyageurs, remise des clés, état des lieux d'entrée et de sortie à chaque séjour.</p>
+        </div>
+      </div>
+
+      <div class="svc-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="svc-card__img">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80" alt="Ménage professionnel" />
+        </div>
+        <div class="svc-card__body">
+          <div class="svc-card__rating">
+            <span class="rating__stars">★★★★★</span>
+            <span class="rating__score">4,9</span>
+            <span class="rating__platform"><i class="fab fa-airbnb"></i> Airbnb</span>
+          </div>
+          <h3>Ménage &amp; linge</h3>
+          <p>Nettoyage hôtelier entre chaque départ, gestion du linge, réassort des consommables. Propreté irréprochable garantie.</p>
+        </div>
+      </div>
+
+      <div class="svc-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="svc-card__img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="Annonce optimisée" />
+        </div>
+        <div class="svc-card__body">
+          <div class="svc-card__rating">
+            <span class="rating__stars">★★★★☆</span>
+            <span class="rating__score">4,7</span>
+            <span class="rating__platform"><i class="fab fa-airbnb"></i> Airbnb</span>
+          </div>
+          <h3>Annonce optimisée</h3>
+          <p>Photos professionnelles, titre percutant, description SEO-optimisée pour maximiser la visibilité et le taux de conversion.</p>
+        </div>
+      </div>
+
+      <div class="svc-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="svc-card__img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="Revenue management" />
+        </div>
+        <div class="svc-card__body">
+          <div class="svc-card__rating">
+            <span class="rating__stars">★★★★☆</span>
+            <span class="rating__score">4,7</span>
+            <span class="rating__platform"><i class="fab fa-airbnb"></i> Airbnb</span>
+          </div>
+          <h3>Gestion des prix</h3>
+          <p>Tarification dynamique temps réel, synchronisation multi-plateformes, ajustement selon les événements locaux et la saisonnalité.</p>
+        </div>
+      </div>
+
+      <div class="svc-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="svc-card__img">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&q=80" alt="Maintenance" />
+        </div>
+        <div class="svc-card__body">
+          <div class="svc-card__rating">
+            <span class="rating__stars">★★★★★</span>
+            <span class="rating__score">4,9</span>
+            <span class="rating__platform"><i class="fas fa-home"></i> Propriétaires</span>
+          </div>
+          <h3>Maintenance</h3>
+          <p>Interventions rapides en cas de panne, suivi préventif, coordination des artisans. Votre bien toujours en parfait état.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="services__airbnb-banner" data-aos="fade-up">
+      <div class="airbnb-banner__left">
+        <i class="fab fa-airbnb"></i>
+        <div>
+          <strong>Note globale sur Airbnb</strong>
+          <span>Mesurée sur l'ensemble de notre portefeuille</span>
+        </div>
+      </div>
+      <div class="airbnb-banner__score">
+        <span class="big-score">4,86</span>
+        <span class="score-stars">★★★★★</span>
+        <span class="score-sub">/ 5</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     AUDIT FORM (mid-page)
+══════════════════════════════════════ -->
+<section class="audit" id="audit">
+  <div class="audit__inner">
+    <div class="audit__copy" data-aos="fade-right">
+      <span class="eyebrow eyebrow--light">Audit gratuit</span>
+      <h2 class="h2 h2--light">
+        Combien peut rapporter<br />
+        <em>votre bien ce mois-ci ?</em>
+      </h2>
+      <p>Un appartement de 2 chambres bien situé au Maroc peut générer jusqu'à <strong>32 500 Dhs par mois</strong>. Découvrez le potentiel exact du vôtre — estimation gratuite, sans engagement.</p>
+
+      <div class="audit__proof">
+        <div class="proof-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Casablanca, Rabat, Marrakech &amp; plus</span>
+        </div>
+        <div class="proof-item">
+          <i class="fas fa-reply"></i>
+          <span>Réponse sous 24h par notre équipe</span>
+        </div>
+        <div class="proof-item">
+          <i class="fas fa-lock"></i>
+          <span>100% confidentiel — zéro engagement</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="audit__form-wrap" data-aos="fade-left">
+      <form class="audit__form" id="auditForm" onsubmit="handleAudit(event)">
+        <h3>Estimez vos revenus</h3>
+
+        <div class="f-group">
+          <label>Adresse du bien *</label>
+          <input type="text" placeholder="Ville, quartier, adresse" required />
+        </div>
+
+        <div class="f-row">
+          <div class="f-group">
+            <label>Type de bien *</label>
+            <select required>
+              <option value="">Choisir</option>
+              <option>Studio</option>
+              <option>Appartement</option>
+              <option>Villa</option>
+              <option>Riad</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>Chambres *</label>
+            <select required>
+              <option value="">Choisir</option>
+              <option>1 chambre</option>
+              <option selected>2 chambres</option>
+              <option>3 chambres</option>
+              <option>4+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="f-row">
+          <div class="f-group">
+            <label>Email *</label>
+            <input type="email" placeholder="votre@email.com" required />
+          </div>
+          <div class="f-group">
+            <label>WhatsApp *</label>
+            <input type="tel" placeholder="+212 6 XX XX XX XX" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--full">
+          <i class="fab fa-whatsapp"></i>
+          Recevoir mon estimation gratuite
+        </button>
+
+        <p class="form-note"><i class="fas fa-lock"></i> Vos données sont 100% confidentielles</p>
+      </form>
+
+      <div class="audit__success" id="auditSuccess">
+        <div class="success-circle"><i class="fas fa-check"></i></div>
+        <h3>Demande reçue !</h3>
+        <p>Notre équipe vous contacte dans les prochaines heures avec votre estimation personnalisée.</p>
+        <a href="https://wa.me/212600953731" target="_blank" class="btn btn--wa">
+          <i class="fab fa-whatsapp"></i> Parler maintenant sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="audit__image">
+    <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=900&q=80" alt="Maroc" />
+    <div class="audit__image-overlay"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     COMMENT ÇA MARCHE — 3 étapes
+══════════════════════════════════════ -->
+<section class="process" id="processus">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Processus</span>
+      <h2 class="h2">3 étapes vers<br /><em>vos revenus passifs.</em></h2>
+    </div>
+
+    <div class="process__steps">
+
+      <div class="process__step" data-aos="fade-up" data-aos-delay="0">
+        <div class="step__num">01</div>
+        <div class="step__icon"><i class="fas fa-key"></i></div>
+        <h3>Remise des clés</h3>
+        <p>Rendez-vous sur place (ou envoi des clés pour les MRE) pour l'état des lieux, la signature du contrat et la prise en charge complète de votre bien.</p>
+        <div class="step__connector"></div>
+      </div>
+
+      <div class="process__step" data-aos="fade-up" data-aos-delay="120">
+        <div class="step__num">02</div>
+        <div class="step__icon"><i class="fas fa-cogs"></i></div>
+        <h3>Gestion intégrale</h3>
+        <p>Nous gérons tout — annonces, réservations, voyageurs, ménage, maintenance. Vous ne faites plus rien. Vous profitez.</p>
+        <div class="step__connector"></div>
+      </div>
+
+      <div class="process__step" data-aos="fade-up" data-aos-delay="240">
+        <div class="step__num">03</div>
+        <div class="step__icon"><i class="fas fa-chart-bar"></i></div>
+        <h3>Revenus &amp; reporting</h3>
+        <p>Chaque mois : virement de vos revenus + rapport détaillé (nuits louées, taux d'occupation, avis, revenus). Transparence totale.</p>
+      </div>
+
+    </div>
+
+    <div class="process__cta" data-aos="fade-up">
+      <a href="#audit" class="btn btn--navy">
+        Commencer maintenant <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     NOTRE OFFRE
+══════════════════════════════════════ -->
+<section class="offre" id="offre">
+  <div class="container">
+    <div class="offre__inner" data-aos="fade-up">
+
+      <div class="offre__card">
+        <div class="offre__badge">Notre tarif unique</div>
+        <div class="offre__price">
+          <span class="price__num">20</span>
+          <div class="price__right">
+            <span class="price__pct">%</span>
+            <span class="price__ttc">TTC</span>
+          </div>
+        </div>
+        <p class="offre__price-desc">de commission sur vos revenus locatifs — tout inclus.</p>
+        <div class="offre__sep"></div>
+        <p class="offre__tagline"><strong>Luxe Onkey s'occupe de tout.</strong><br />Vous encaissez, nous travaillons.</p>
+        <a href="#audit" class="btn btn--gold btn--full" style="margin-top:2rem;">
+          Estimer mes revenus <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="offre__features">
+        <h3>Tout ce qui est inclus</h3>
+        <p class="offre__sub">Une seule commission. Zéro frais caché. Zéro surprise.</p>
+        <ul class="offre__list">
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-camera"></i></div>
+            <div><strong>Photos professionnelles</strong><br /><span>Shooting HD, mise en scène, optimisation des visuels</span></div>
+          </li>
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-bullhorn"></i></div>
+            <div><strong>Création &amp; optimisation des annonces</strong><br /><span>Airbnb, Booking, VRBO — textes et SEO optimisés</span></div>
+          </li>
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-comments"></i></div>
+            <div><strong>Gestion complète des voyageurs</strong><br /><span>Communication, check-in, check-out, urgences</span></div>
+          </li>
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-broom"></i></div>
+            <div><strong>Ménage professionnel &amp; linge</strong><br /><span>Entre chaque séjour, avec produits hôteliers</span></div>
+          </li>
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-tools"></i></div>
+            <div><strong>Maintenance &amp; urgences</strong><br /><span>Interventions rapides, coordination artisans</span></div>
+          </li>
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-chart-line"></i></div>
+            <div><strong>Revenue management dynamique</strong><br /><span>Prix ajustés en temps réel pour maximiser vos revenus</span></div>
+          </li>
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-file-alt"></i></div>
+            <div><strong>Rapport mensuel détaillé</strong><br /><span>Revenus, taux d'occupation, avis voyageurs</span></div>
+          </li>
+          <li>
+            <div class="offre-li__icon"><i class="fas fa-ad"></i></div>
+            <div><strong>Campagne publicitaire</strong><br /><span>Boost des annonces pour augmenter les réservations</span></div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     TÉMOIGNAGES
+══════════════════════════════════════ -->
+<section class="temoignages" id="temoignages">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Ils nous font confiance</span>
+      <h2 class="h2">Ce que disent<br /><em>nos propriétaires.</em></h2>
+      <div class="global-rating">
+        <span class="global-rating__stars">★★★★★</span>
+        <strong>4,9 / 5</strong>
+        <span>— 47 avis vérifiés</span>
+      </div>
+    </div>
+
+    <div class="temoignages__grid">
+
+      <div class="temoignage" data-aos="fade-up" data-aos-delay="0">
+        <div class="temoignage__header">
+          <div class="temoignage__avatar">K</div>
+          <div class="temoignage__meta">
+            <strong>Karim B.</strong>
+            <span>Propriétaire à Casablanca · MRE Paris</span>
+          </div>
+          <div class="temoignage__logo"><i class="fab fa-airbnb"></i></div>
+        </div>
+        <div class="temoignage__stars">★★★★★</div>
+        <blockquote>"Depuis que j'ai confié mon appartement à Luxe Onkey, mes revenus ont augmenté de 40%. Je suis à Paris, je ne gère plus rien — ils s'occupent de tout avec une réactivité et une rigueur impressionnantes."</blockquote>
+        <div class="temoignage__tag">+40% de revenus · Gestion totale</div>
+      </div>
+
+      <div class="temoignage temoignage--featured" data-aos="fade-up" data-aos-delay="100">
+        <div class="temoignage__header">
+          <div class="temoignage__avatar temoignage__avatar--gold">S</div>
+          <div class="temoignage__meta">
+            <strong>Salma R.</strong>
+            <span>2 appartements · Marrakech</span>
+          </div>
+          <div class="temoignage__logo"><i class="fab fa-airbnb"></i></div>
+        </div>
+        <div class="temoignage__stars">★★★★★</div>
+        <blockquote>"Service exceptionnel. Mes voyageurs laissent des avis 5 étoiles à chaque séjour. Je reçois mon virement chaque mois avec un rapport clair. Je n'ai pas une seule chose à gérer. Je recommande les yeux fermés."</blockquote>
+        <div class="temoignage__tag">Note 5★ constante · 0 contrainte</div>
+      </div>
+
+      <div class="temoignage" data-aos="fade-up" data-aos-delay="200">
+        <div class="temoignage__header">
+          <div class="temoignage__avatar">Y</div>
+          <div class="temoignage__meta">
+            <strong>Youssef M.</strong>
+            <span>Villa à Rabat · MRE Montréal</span>
+          </div>
+          <div class="temoignage__logo"><i class="fas fa-home"></i></div>
+        </div>
+        <div class="temoignage__stars">★★★★★</div>
+        <blockquote>"En tant que MRE, gérer mon bien à distance était un cauchemar. Luxe Onkey a tout changé. Transparence totale, reporting clair chaque mois, et des résultats qui dépassent mes attentes."</blockquote>
+        <div class="temoignage__tag">MRE · Gestion à distance · Reporting</div>
+      </div>
+
+    </div>
+
+    <!-- Plateformes -->
+    <div class="platforms" data-aos="fade-up">
+      <span>Référencé sur les meilleures plateformes</span>
+      <div class="platforms__logos">
+        <span class="platform platform--airbnb"><i class="fab fa-airbnb"></i> Airbnb</span>
+        <span class="platform platform--booking"><i class="fas fa-bed"></i> Booking.com</span>
+        <span class="platform platform--vrbo"><i class="fas fa-home"></i> VRBO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="faq__inner">
+    <div class="faq__left" data-aos="fade-right">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">Vos questions.<br /><em>Nos réponses.</em></h2>
+      <p>Vous avez d'autres questions ? Notre équipe répond sous 24h.</p>
+      <a href="https://wa.me/212600953731" target="_blank" class="btn btn--navy">
+        <i class="fab fa-whatsapp"></i> Posez votre question
+      </a>
+    </div>
+
+    <div class="faq__list" data-aos="fade-left">
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          <span>Combien puis-je gagner avec mon bien ?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq__a">
+          <p>Un appartement de 2 chambres bien situé au Maroc peut générer entre 15 000 et 40 000 Dhs par mois en location courte durée. Cela dépend de l'emplacement, de l'état du bien et de la saisonnalité. Contactez-nous pour une estimation précise et gratuite.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          <span>Que comprend votre commission de 20% ?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq__a">
+          <p>Notre commission de 20% TTC couvre l'intégralité de nos services : création et optimisation des annonces, gestion des voyageurs, ménage professionnel, gestion du linge, maintenance, revenue management, reporting mensuel et campagnes publicitaires. Aucun frais caché.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          <span>Je suis MRE à l'étranger — comment ça fonctionne ?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq__a">
+          <p>C'est précisément pour les MRE que Luxe Onkey a été créé. Vous nous confiez les clés (ou nous faisons une remise à distance) et nous gérons tout. Chaque mois, vous recevez votre virement et votre rapport, où que vous soyez dans le monde.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          <span>Puis-je utiliser mon bien quand je le veux ?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq__a">
+          <p>Oui, absolument. Vous pouvez bloquer des périodes sur le calendrier pour votre usage personnel à tout moment. Nous nous adaptons à vos besoins et gérons les périodes restantes pour maximiser vos revenus.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          <span>Comment sont sécurisés mes revenus ?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq__a">
+          <p>Les revenus sont encaissés directement par les plateformes (Airbnb, Booking). Après déduction de notre commission, vous recevez un virement mensuel accompagné d'un rapport complet et transparent sur toutes les transactions.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          <span>Quels types de biens acceptez-vous ?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq__a">
+          <p>Nous gérons des studios, appartements (1 à 5 chambres), villas et riads au Maroc. Le bien doit répondre à nos critères de qualité pour garantir une expérience premium à vos voyageurs et maintenir notre note Airbnb élevée.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CTA FINAL — BAND
+══════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="cta-band__bg">
+    <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1920&q=80" alt="" />
+    <div class="cta-band__overlay"></div>
+  </div>
+  <div class="cta-band__content" data-aos="fade-up">
+    <span class="eyebrow eyebrow--light">Prêt à commencer ?</span>
+    <h2 class="h2 h2--light">Votre bien peut rapporter<br /><em>dès ce mois-ci.</em></h2>
+    <p>Rejoignez les propriétaires qui ont fait confiance à Luxe Onkey et récupérez votre liberté.</p>
+    <div class="cta-band__actions">
+      <a href="#audit" class="btn btn--gold">
+        Audit gratuit — sans engagement
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="https://wa.me/212600953731" target="_blank" class="btn btn--ghost">
+        <i class="fab fa-whatsapp"></i> Parler à un expert
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <div class="nav__logo" style="margin-bottom:1rem;">
+        <span class="logo__mark">LO</span>
+        <span class="logo__text"><b>LUXE</b> ONKEY <small>GROUP</small></span>
+      </div>
+      <p>Conciergerie de luxe spécialisée dans la gestion de biens en location courte et longue durée au Maroc.</p>
+      <div class="footer__socials">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/212600953731" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Services</h4>
+      <a href="#services">Communication voyageurs</a>
+      <a href="#services">Check-in / Check-out</a>
+      <a href="#services">Ménage &amp; linge</a>
+      <a href="#services">Revenue management</a>
+      <a href="#services">Optimisation des annonces</a>
+      <a href="#services">Maintenance</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Navigation</h4>
+      <a href="#pourquoi">Pourquoi nous ?</a>
+      <a href="#processus">Comment ça marche</a>
+      <a href="#offre">Notre offre</a>
+      <a href="#temoignages">Avis clients</a>
+      <a href="#faq">FAQ</a>
+      <a href="#audit">Audit gratuit</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/212600953731"><i class="fab fa-whatsapp"></i> +212 6 00 95 37 31</a>
+      <a href="mailto:contact@luxeonkey.com"><i class="fas fa-envelope"></i> contact@luxeonkey.com</a>
+      <p style="color:rgba(255,255,255,.4);font-size:.85rem;margin-top:.5rem;"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Rabat · Casablanca · Marrakech</p>
+      <a href="https://wa.me/212600953731" target="_blank" class="footer__wa-btn">
+        <i class="fab fa-whatsapp"></i> Nous écrire
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <span>© 2025 Luxe Onkey Group · Tous droits réservés</span>
+    <div>
+      <a href="#">Mentions légales</a>
+      <a href="#">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     FLOATING WHATSAPP
+══════════════════════════════════════ -->
+<a href="https://wa.me/212600953731" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span>Discutons !</span>
+</a>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
