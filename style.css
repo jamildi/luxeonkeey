@@ -1239,7 +1239,7 @@ textarea { resize: vertical; }
   display: inline-flex; align-items: center; gap: .5rem;
   background: #25d366; color: var(--white);
   font-size: .82rem; font-weight: 700;
-  padding: .55rem 1.25rem .55rem 1rem; border-radius: 50px;
+  padding: .55rem 1rem; border-radius: 50px;
   transition: background .2s;
   white-space: nowrap;
 }
