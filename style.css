@@ -1234,15 +1234,16 @@ textarea { resize: vertical; }
   font-size: .82rem; color: rgba(255,255,255,.28); line-height: 1.5;
   display: flex; align-items: flex-start; gap: .5rem; margin: .3rem 0 .75rem;
 }
+.footer-wa-wrap { margin-top: .5rem; }
 .footer-wa {
-  display: inline-flex !important; align-items: center; gap: .5rem;
-  background: #25d366 !important; color: var(--white) !important;
-  font-size: .82rem !important; font-weight: 700 !important;
-  padding: .55rem 1.25rem; border-radius: 50px;
-  transition: background .2s !important;
-  white-space: nowrap; width: fit-content;
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #25d366; color: var(--white);
+  font-size: .82rem; font-weight: 700;
+  padding: .55rem 1.25rem .55rem 1rem; border-radius: 50px;
+  transition: background .2s;
+  white-space: nowrap;
 }
-.footer-wa:hover { background: #1cb957 !important; }
+.footer-wa:hover { background: #1cb957; color: var(--white); }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.05);
