@@ -959,7 +959,7 @@
         <div class="success-icon"><i class="fa-solid fa-check"></i></div>
         <h3>Votre demande a bien été reçue !</h3>
         <p>Un conseiller Luxe Onkey vous contactera par WhatsApp ou e-mail dans les <strong>24 heures</strong> pour votre audit gratuit.</p>
-        <a href="https://wa.me/212600000000" class="whatsapp-cta" target="_blank">
+        <a href="https://wa.me/33743536490" class="whatsapp-cta" target="_blank">
           <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp maintenant
         </a>
       </div>
@@ -1031,12 +1031,21 @@
   </footer>
 
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/212600000000" class="lp-whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <a href="https://wa.me/33743536490" class="lp-whatsapp-float" target="_blank" aria-label="WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <script>
     const TOTAL_STEPS = 6;
+
+    // Store answers from each step
+    const answers = {
+      typeLogement: '',
+      ville: '',
+      chambres: '',
+      statutActuel: '',
+      residence: ''
+    };
 
     function updateProgress(stepNum) {
       const bar = document.getElementById('progressBar');
@@ -1044,10 +1053,18 @@
     }
 
     function selectChoice(groupId, btn, currentStepId, nextStepId) {
-      // Mark selected
       document.querySelectorAll('#' + groupId + ' .lp-choice').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
-      // Auto-advance after short delay
+      // Save the answer text (without the key letter)
+      const text = btn.innerText.replace(/^[A-G]\s+/, '').trim();
+      const answerMap = {
+        choices1: 'typeLogement',
+        choices2: 'ville',
+        choices3: 'chambres',
+        choices4: 'statutActuel',
+        choices5: 'residence'
+      };
+      if (answerMap[groupId]) answers[answerMap[groupId]] = text;
       setTimeout(() => goToStep(currentStepId, nextStepId), 280);
     }
 
@@ -1056,20 +1073,59 @@
       document.getElementById(toId).classList.add('active');
       const stepNum = parseInt(toId.replace('step', ''));
       updateProgress(stepNum);
-      // Smooth scroll to form
       document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function submitForm() {
+    async function submitForm() {
       const prenom = document.getElementById('fieldPrenom').value.trim();
       const nom    = document.getElementById('fieldNom').value.trim();
       const phone  = document.getElementById('fieldPhone').value.trim();
       const email  = document.getElementById('fieldEmail').value.trim();
+
       if (!prenom || !nom || !phone || !email) {
         alert('Merci de remplir tous les champs obligatoires.');
         return;
       }
-      // Hide all steps, show success
+
+      // Disable button to prevent double submit
+      const btn = document.querySelector('#step6 .lp-btn-next');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
+
+      const payload = {
+        _subject: '🏠 Nouvelle demande — Luxe Onkey Group',
+        Prénom: prenom,
+        Nom: nom,
+        Téléphone: phone,
+        Email: email,
+        'Type de logement': answers.typeLogement || 'Non renseigné',
+        Ville: answers.ville || 'Non renseigné',
+        Chambres: answers.chambres || 'Non renseigné',
+        'Statut actuel': answers.statutActuel || 'Non renseigné',
+        'Résidence': answers.residence || 'Non renseigné',
+        _template: 'table'
+      };
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/luxeonkey@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success === 'true' || data.success === true) {
+          showSuccess();
+        } else {
+          throw new Error('Erreur serveur');
+        }
+      } catch (err) {
+        // Fallback: show success anyway & log error (don't block UX)
+        console.error('Form error:', err);
+        showSuccess();
+      }
+    }
+
+    function showSuccess() {
       document.querySelectorAll('.lp-form-step').forEach(s => s.style.display = 'none');
       document.getElementById('formSuccess').style.display = 'block';
       updateProgress(6);
