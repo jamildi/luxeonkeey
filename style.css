@@ -1235,7 +1235,7 @@ textarea { resize: vertical; }
   display: flex; align-items: flex-start; gap: .5rem; margin: .3rem 0 .75rem;
 }
 .footer-wa-wrap { margin-top: .5rem; }
-.footer-wa {
+.footer-wa-wrap .footer-wa {
   display: inline-flex; align-items: center; gap: .5rem;
   background: #25d366; color: var(--white);
   font-size: .82rem; font-weight: 700;
@@ -1243,7 +1243,7 @@ textarea { resize: vertical; }
   transition: background .2s;
   white-space: nowrap;
 }
-.footer-wa:hover { background: #1cb957; color: var(--white); }
+.footer-wa-wrap .footer-wa:hover { background: #1cb957; color: var(--white); }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.05);
