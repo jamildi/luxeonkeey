@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confiez votre bien à Luxe Onkey — Gestion locative premium au Maroc</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #0B1D3A;
+      --navy-2:  #152D50;
+      --navy-3:  #1A3A7A;
+      --gold:    #C9A84C;
+      --gold-2:  #E8CC6A;
+      --gold-3:  #8B6914;
+      --cream:   #FAF8F5;
+      --cream-2: #F2EFE8;
+      --text:    #1A1A2E;
+      --muted:   #6B7280;
+      --grad-gold: linear-gradient(135deg, #8B6914 0%, #C9A84C 35%, #E8CC6A 60%, #B8922A 100%);
+      --shadow-gold: 0 4px 24px rgba(201,168,76,.18);
+      --radius: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── TOP BAR ─── */
+    .lp-topbar {
+      background: var(--navy);
+      padding: 14px 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lp-topbar img.logo-img {
+      height: 42px;
+      width: auto;
+    }
+
+    /* ─── HERO ─── */
+    .lp-hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, var(--navy-3) 100%);
+      padding: 56px 20px 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .lp-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold-2);
+      margin-bottom: 20px;
+    }
+    .lp-eyebrow::before,
+    .lp-eyebrow::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .6;
+    }
+    .lp-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 6vw, 62px);
+      font-weight: 700;
+      line-height: 1.12;
+      color: #fff;
+      max-width: 780px;
+      margin: 0 auto 20px;
+    }
+    .lp-hero h1 em {
+      font-style: italic;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .lp-hero .subtitle {
+      font-size: clamp(15px, 2vw, 18px);
+      color: rgba(255,255,255,.75);
+      max-width: 560px;
+      margin: 0 auto 28px;
+      font-weight: 300;
+    }
+    /* Social proof avatars */
+    .lp-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .lp-avatars {
+      display: flex;
+    }
+    .lp-avatars span {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      margin-left: -10px;
+    }
+    .lp-avatars span:first-child { margin-left: 0; }
+    .lp-avatars span:nth-child(1) { background: #3A6EA5; }
+    .lp-avatars span:nth-child(2) { background: #2D8A55; }
+    .lp-avatars span:nth-child(3) { background: #C9A84C; }
+    .lp-avatars span:nth-child(4) { background: #7B4FA0; }
+    .lp-avatars span:nth-child(5) { background: #C45C3E; }
+    .lp-proof-text {
+      font-size: 13px;
+      color: rgba(255,255,255,.8);
+    }
+    .lp-proof-text strong {
+      color: var(--gold-2);
+      font-weight: 600;
+    }
+    /* Trust badges */
+    .lp-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .lp-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,.85);
+    }
+    .lp-badge i {
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    /* ─── STEP WRAPPER ─── */
+    .lp-step-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 760px;
+      margin: 48px auto 0;
+      padding: 0 20px;
+    }
+    .lp-step-num {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 50%;
+      background: var(--grad-gold);
+      color: var(--navy);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lp-step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .lp-step-title span {
+      font-style: italic;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── VIDEO SECTION ─── */
+    .lp-video-wrap {
+      max-width: 760px;
+      margin: 20px auto 0;
+      padding: 0 20px;
+    }
+    .lp-video-inner {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 2px solid rgba(201,168,76,.25);
+      box-shadow: 0 20px 60px rgba(11,29,58,.15);
+    }
+    .lp-video-inner iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ─── CTA BUTTON ─── */
+    .lp-cta-wrap {
+      text-align: center;
+      padding: 32px 20px 0;
+    }
+    .lp-btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--grad-gold);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: var(--shadow-gold);
+      transition: transform .2s, box-shadow .2s;
+      letter-spacing: .03em;
+      border: none;
+      cursor: pointer;
+    }
+    .lp-btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,.35);
+    }
+    .lp-btn-cta i { font-size: 18px; }
+
+    /* ─── TESTIMONIALS ─── */
+    .lp-testi {
+      max-width: 900px;
+      margin: 48px auto 0;
+      padding: 0 20px;
+    }
+    .lp-testi-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .lp-testi-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .lp-testi-header .trustpilot-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .lp-testi-header .trustpilot-badge i { color: #00B67A; }
+    .lp-testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .lp-testi-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+      border: 1px solid var(--cream-2);
+      box-shadow: 0 2px 12px rgba(11,29,58,.05);
+    }
+    .lp-testi-card .tc-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .lp-testi-card .tc-avatar {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+    }
+    .lp-testi-card .tc-name { font-weight: 600; font-size: 14px; color: var(--navy); }
+    .lp-testi-card .tc-stars { color: var(--gold); font-size: 12px; letter-spacing: 1px; }
+    .lp-testi-card .tc-verified {
+      font-size: 11px;
+      color: #2D8A55;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .lp-testi-card p {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.55;
+    }
+    /* avatar colors */
+    .av-blue  { background: #3A6EA5; }
+    .av-green { background: #2D8A55; }
+    .av-red   { background: #C45C3E; }
+    .av-gold  { background: #C9A84C; }
+    .av-navy  { background: #1A3A7A; }
+
+    /* ─── FORM SECTION ─── */
+    .lp-form-section {
+      max-width: 680px;
+      margin: 48px auto 0;
+      padding: 0 20px 64px;
+    }
+    .lp-form-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--cream-2);
+      box-shadow: 0 8px 40px rgba(11,29,58,.08);
+      overflow: hidden;
+    }
+    /* Progress bar */
+    .lp-form-progress {
+      height: 4px;
+      background: var(--cream-2);
+    }
+    .lp-form-progress-bar {
+      height: 100%;
+      background: var(--grad-gold);
+      border-radius: 4px;
+      transition: width .4s ease;
+      width: 16.6%;
+    }
+    /* Form steps */
+    .lp-form-step {
+      display: none;
+      padding: 36px 36px 32px;
+      animation: fadeSlide .35s ease;
+    }
+    .lp-form-step.active { display: block; }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .lp-form-step .step-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .lp-form-step .step-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    /* Choice buttons */
+    .lp-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .lp-choice {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border: 1.5px solid var(--cream-2);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, transform .15s;
+      font-size: 15px;
+      color: var(--text);
+      background: #fff;
+      text-align: left;
+      width: 100%;
+    }
+    .lp-choice:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,.04);
+      transform: translateX(3px);
+    }
+    .lp-choice.selected {
+      border-color: var(--gold);
+      background: rgba(201,168,76,.07);
+    }
+    .lp-choice .choice-key {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 6px;
+      background: var(--cream-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      transition: background .2s, color .2s;
+    }
+    .lp-choice.selected .choice-key,
+    .lp-choice:hover .choice-key {
+      background: var(--grad-gold);
+      color: var(--navy);
+    }
+    /* Input fields */
+    .lp-fields { display: flex; flex-direction: column; gap: 14px; }
+    .lp-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      letter-spacing: .03em;
+    }
+    .lp-field input, .lp-field select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--cream-2);
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .lp-field input:focus, .lp-field select:focus {
+      border-color: var(--gold);
+    }
+    /* Next / Submit buttons */
+    .lp-form-nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 28px;
+    }
+    .lp-btn-next {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--grad-gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 28px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: var(--shadow-gold);
+    }
+    .lp-btn-next:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,.3); }
+    /* Success state */
+    .lp-success {
+      display: none;
+      padding: 48px 36px;
+      text-align: center;
+    }
+    .lp-success .success-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--grad-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+      color: var(--navy);
+    }
+    .lp-success h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .lp-success p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 400px;
+      margin: 0 auto 24px;
+    }
+    .lp-success .whatsapp-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    /* Step counter */
+    .step-counter {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    /* ─── WHY SECTION ─── */
+    .lp-why {
+      background: var(--navy);
+      padding: 64px 20px;
+      margin-top: 48px;
+    }
+    .lp-why h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .lp-why h2 em {
+      font-style: italic;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .lp-why .why-sub {
+      text-align: center;
+      color: rgba(255,255,255,.55);
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+    .lp-why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .lp-why-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(201,168,76,.15);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .lp-why-card .wc-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,168,76,.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .lp-why-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .lp-why-card p {
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      line-height: 1.55;
+    }
+
+    /* ─── STATS BAND ─── */
+    .lp-stats {
+      background: var(--navy-2);
+      border-top: 1px solid rgba(201,168,76,.12);
+      border-bottom: 1px solid rgba(201,168,76,.12);
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+    .lp-stat { text-align: center; }
+    .lp-stat .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 700;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .lp-stat .stat-lbl {
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* ─── FOOTER ─── */
+    .lp-footer {
+      background: var(--navy);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .lp-footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,.3);
+    }
+    .lp-footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .lp-whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      text-decoration: none;
+      z-index: 100;
+      transition: transform .2s;
+    }
+    .lp-whatsapp-float:hover { transform: scale(1.08); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .lp-form-step { padding: 24px 20px 20px; }
+      .lp-success { padding: 32px 20px; }
+      .lp-testi-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) {
+      .lp-testi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="lp-topbar">
+    <img src="logo.svg" alt="Luxe Onkey Group" class="logo-img" />
+  </header>
+
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="lp-eyebrow">Conciergerie Locative Premium · Maroc</div>
+    <h1>
+      Votre bien au Maroc mérite<br />
+      <em>de générer ce qu'il vaut vraiment.</em>
+    </h1>
+    <p class="subtitle">
+      Confiez votre logement à Luxe Onkey Group — gestion complète, revenus optimisés, zéro tracas. Où que vous soyez dans le monde.
+    </p>
+    <div class="lp-proof">
+      <div class="lp-avatars">
+        <span>K</span><span>S</span><span>N</span><span>Y</span><span>A</span>
+      </div>
+      <div class="lp-proof-text">
+        <strong>+120 propriétaires</strong> nous font déjà confiance
+      </div>
+    </div>
+    <div class="lp-badges">
+      <div class="lp-badge"><i class="fa-solid fa-circle-check"></i> Aucun frais d'entrée</div>
+      <div class="lp-badge"><i class="fa-solid fa-chart-line"></i> Revenus optimisés chaque mois</div>
+      <div class="lp-badge"><i class="fa-solid fa-eye"></i> Suivi en temps réel</div>
+      <div class="lp-badge"><i class="fa-solid fa-lock-open"></i> Sans engagement</div>
+    </div>
+  </section>
+
+  <!-- STEP 1 : VIDEO -->
+  <div class="lp-step-label">
+    <div class="lp-step-num">1</div>
+    <h2 class="lp-step-title">Regardez cette vidéo de <span>3 minutes</span></h2>
+  </div>
+  <div class="lp-video-wrap">
+    <div class="lp-video-inner">
+      <!-- Remplacez VIDEO_ID par l'ID YouTube de votre vraie vidéo -->
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
+        title="Luxe Onkey Group — Présentation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <div class="lp-cta-wrap">
+    <a href="#formulaire" class="lp-btn-cta">
+      Je confie mon logement <i class="fa-solid fa-arrow-down"></i>
+    </a>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="lp-testi">
+    <div class="lp-testi-header">
+      <h2>Ce que disent nos propriétaires</h2>
+      <div class="trustpilot-badge">
+        <i class="fa-solid fa-star"></i> Avis vérifiés
+      </div>
+    </div>
+    <div class="lp-testi-grid">
+
+      <div class="lp-testi-card">
+        <div class="tc-header">
+          <div class="tc-avatar av-blue">K</div>
+          <div>
+            <div class="tc-name">Karim El Mansouri</div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="tc-verified">✓ Avis vérifié</div>
+        <p>J'habite à Paris et j'avais un appartement vide à Marrakech depuis 1 an. En 2 semaines Luxe Onkey l'a mis en ligne et j'ai reçu mes premiers revenus. Incroyable.</p>
+      </div>
+
+      <div class="lp-testi-card">
+        <div class="tc-header">
+          <div class="tc-avatar av-gold">S</div>
+          <div>
+            <div class="tc-name">Siham Boukhari</div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+        <p>Je gérais seule mon riad sur Airbnb et c'était épuisant. Depuis qu'ils gèrent tout, je reçois +42% de revenus et je ne touche plus à rien. Je recommande à 100%.</p>
+      </div>
+
+      <div class="lp-testi-card">
+        <div class="tc-header">
+          <div class="tc-avatar av-green">N</div>
+          <div>
+            <div class="tc-name">Nour Ait Taleb</div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="tc-verified">✓ Avis vérifié</div>
+        <p>Professionnels, disponibles et transparents. Le reporting mensuel est très clair. Mon logement à Casablanca génère maintenant 18 000 DH/mois en moyenne.</p>
+      </div>
+
+      <div class="lp-testi-card">
+        <div class="tc-header">
+          <div class="tc-avatar av-navy">Y</div>
+          <div>
+            <div class="tc-name">Youssef Chraibi</div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+        <p>MRE basé à Montréal. Luxe Onkey gère tout à distance. Zero stress, revenus virés chaque mois. Exactement ce que je cherchais pour mon bien à Agadir.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STEP 2 : FORM -->
+  <div class="lp-step-label" id="formulaire">
+    <div class="lp-step-num">2</div>
+    <h2 class="lp-step-title">Remplissez le formulaire en <span>2 minutes</span></h2>
+  </div>
+
+  <section class="lp-form-section">
+    <div class="lp-form-card">
+      <div class="lp-form-progress">
+        <div class="lp-form-progress-bar" id="progressBar"></div>
+      </div>
+
+      <!-- STEP 1 : Type de logement -->
+      <div class="lp-form-step active" id="step1">
+        <div class="step-counter">Question 1 sur 6</div>
+        <div class="step-q">Quel type de logement possédez-vous ?</div>
+        <div class="step-hint">Sélectionnez une option pour continuer</div>
+        <div class="lp-choices" id="choices1">
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
+            <span class="choice-key">A</span> Appartement
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
+            <span class="choice-key">B</span> Villa / Maison
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
+            <span class="choice-key">C</span> Riad
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
+            <span class="choice-key">D</span> Duplex / Penthouse
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
+            <span class="choice-key">E</span> Autre
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2 : Ville -->
+      <div class="lp-form-step" id="step2">
+        <div class="step-counter">Question 2 sur 6</div>
+        <div class="step-q">Dans quelle ville se situe votre logement ?</div>
+        <div class="step-hint">Nous opérons dans les principales villes du Maroc</div>
+        <div class="lp-choices" id="choices2">
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
+            <span class="choice-key">A</span> Marrakech
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
+            <span class="choice-key">B</span> Casablanca
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
+            <span class="choice-key">C</span> Agadir
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
+            <span class="choice-key">D</span> Rabat
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
+            <span class="choice-key">E</span> Tanger
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
+            <span class="choice-key">F</span> Fès
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
+            <span class="choice-key">G</span> Autre ville
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3 : Chambres -->
+      <div class="lp-form-step" id="step3">
+        <div class="step-counter">Question 3 sur 6</div>
+        <div class="step-q">Combien de chambres compte votre logement ?</div>
+        <div class="step-hint">Hors salon et cuisine</div>
+        <div class="lp-choices" id="choices3">
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
+            <span class="choice-key">A</span> Studio / T1
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
+            <span class="choice-key">B</span> 1 chambre
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
+            <span class="choice-key">C</span> 2 chambres
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
+            <span class="choice-key">D</span> 3 chambres
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
+            <span class="choice-key">E</span> 4 chambres et plus
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4 : Statut actuel -->
+      <div class="lp-form-step" id="step4">
+        <div class="step-counter">Question 4 sur 6</div>
+        <div class="step-q">Votre logement est-il déjà en location courte durée ?</div>
+        <div class="step-hint">Airbnb, Booking.com, ou autre plateforme</div>
+        <div class="lp-choices" id="choices4">
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
+            <span class="choice-key">A</span> Oui, sur Airbnb
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
+            <span class="choice-key">B</span> Oui, sur Booking.com
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
+            <span class="choice-key">C</span> Oui, sur les deux
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
+            <span class="choice-key">D</span> En location longue durée
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
+            <span class="choice-key">E</span> Non, pas encore loué
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 5 : Où résidez-vous -->
+      <div class="lp-form-step" id="step5">
+        <div class="step-counter">Question 5 sur 6</div>
+        <div class="step-q">Où résidez-vous actuellement ?</div>
+        <div class="step-hint">Cela nous aide à adapter notre accompagnement</div>
+        <div class="lp-choices" id="choices5">
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
+            <span class="choice-key">A</span> Au Maroc
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
+            <span class="choice-key">B</span> En France
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
+            <span class="choice-key">C</span> En Belgique / Suisse
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
+            <span class="choice-key">D</span> Au Canada
+          </button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
+            <span class="choice-key">E</span> Autre pays
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 6 : Coordonnées -->
+      <div class="lp-form-step" id="step6">
+        <div class="step-counter">Question 6 sur 6 — Dernière étape !</div>
+        <div class="step-q">Vos coordonnées</div>
+        <div class="step-hint">Un conseiller Luxe Onkey vous contacte sous 24h</div>
+        <div class="lp-fields">
+          <div class="lp-field">
+            <label>Prénom *</label>
+            <input type="text" id="fieldPrenom" placeholder="Votre prénom" required />
+          </div>
+          <div class="lp-field">
+            <label>Nom *</label>
+            <input type="text" id="fieldNom" placeholder="Votre nom" required />
+          </div>
+          <div class="lp-field">
+            <label>Téléphone WhatsApp *</label>
+            <input type="tel" id="fieldPhone" placeholder="+33 6 xx xx xx xx" required />
+          </div>
+          <div class="lp-field">
+            <label>Adresse e-mail *</label>
+            <input type="email" id="fieldEmail" placeholder="votre@email.com" required />
+          </div>
+        </div>
+        <div class="lp-form-nav">
+          <button class="lp-btn-next" onclick="submitForm()">
+            Envoyer ma demande <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="lp-success" id="formSuccess">
+        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+        <h3>Votre demande a bien été reçue !</h3>
+        <p>Un conseiller Luxe Onkey vous contactera par WhatsApp ou e-mail dans les <strong>24 heures</strong> pour votre audit gratuit.</p>
+        <a href="https://wa.me/212600000000" class="whatsapp-cta" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp maintenant
+        </a>
+      </div>
+
+    </div><!-- /form-card -->
+  </section>
+
+  <!-- WHY LUXE ONKEY -->
+  <section class="lp-why">
+    <h2>Pourquoi Luxe Onkey est <em>différent</em></h2>
+    <p class="why-sub">Une gestion complète, premium, adaptée au marché marocain</p>
+    <div class="lp-why-grid">
+      <div class="lp-why-card">
+        <div class="wc-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Prix optimisés chaque jour</h3>
+        <p>Algorithme de tarification dynamique selon la saisonnalité, les événements locaux et la demande en temps réel.</p>
+      </div>
+      <div class="lp-why-card">
+        <div class="wc-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>Réponse en moins de 15 min</h3>
+        <p>Communication voyageurs assurée 24h/24, 7j/7 pour maximiser votre taux d'occupation et vos avis.</p>
+      </div>
+      <div class="lp-why-card">
+        <div class="wc-icon"><i class="fa-solid fa-broom"></i></div>
+        <h3>Ménage 5 étoiles</h3>
+        <p>Protocole de nettoyage en 17 étapes avec contrôle qualité photo après chaque séjour.</p>
+      </div>
+      <div class="lp-why-card">
+        <div class="wc-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+        <h3>Gestion 100% transparente</h3>
+        <p>Check-in/out, assurance voyageurs, fiches de police, reporting mensuel détaillé avec photos.</p>
+      </div>
+      <div class="lp-why-card">
+        <div class="wc-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h3>Conformité juridique</h3>
+        <p>Enregistrement légal, fiche police, conformité totale avec la législation locative marocaine.</p>
+      </div>
+      <div class="lp-why-card">
+        <div class="wc-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3>Accompagnement dédié MRE</h3>
+        <p>Un interlocuteur unique, bilingue, disponible où que vous soyez dans le monde. Zéro distance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="lp-stats">
+    <div class="lp-stat">
+      <div class="stat-num">120+</div>
+      <div class="stat-lbl">Propriétaires accompagnés</div>
+    </div>
+    <div class="lp-stat">
+      <div class="stat-num">+40%</div>
+      <div class="stat-lbl">De revenus en moyenne</div>
+    </div>
+    <div class="lp-stat">
+      <div class="stat-num">7/7</div>
+      <div class="stat-lbl">Équipes sur le terrain</div>
+    </div>
+    <div class="lp-stat">
+      <div class="stat-num">0 DH</div>
+      <div class="stat-lbl">Frais d'entrée</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="lp-footer">
+    <p>© 2026 Luxe Onkey Group — Tous droits réservés · <a href="index.html">Site principal</a></p>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/212600000000" class="lp-whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const TOTAL_STEPS = 6;
+
+    function updateProgress(stepNum) {
+      const bar = document.getElementById('progressBar');
+      bar.style.width = (stepNum / TOTAL_STEPS * 100) + '%';
+    }
+
+    function selectChoice(groupId, btn, currentStepId, nextStepId) {
+      // Mark selected
+      document.querySelectorAll('#' + groupId + ' .lp-choice').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      // Auto-advance after short delay
+      setTimeout(() => goToStep(currentStepId, nextStepId), 280);
+    }
+
+    function goToStep(fromId, toId) {
+      document.getElementById(fromId).classList.remove('active');
+      document.getElementById(toId).classList.add('active');
+      const stepNum = parseInt(toId.replace('step', ''));
+      updateProgress(stepNum);
+      // Smooth scroll to form
+      document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function submitForm() {
+      const prenom = document.getElementById('fieldPrenom').value.trim();
+      const nom    = document.getElementById('fieldNom').value.trim();
+      const phone  = document.getElementById('fieldPhone').value.trim();
+      const email  = document.getElementById('fieldEmail').value.trim();
+      if (!prenom || !nom || !phone || !email) {
+        alert('Merci de remplir tous les champs obligatoires.');
+        return;
+      }
+      // Hide all steps, show success
+      document.querySelectorAll('.lp-form-step').forEach(s => s.style.display = 'none');
+      document.getElementById('formSuccess').style.display = 'block';
+      updateProgress(6);
+      document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Init
+    updateProgress(1);
+  </script>
+</body>
+</html>
