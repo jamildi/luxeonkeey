@@ -587,19 +587,19 @@ textarea { resize: vertical; }
    CALCULATEUR DE REVENUS
    ============================================================ */
 .calc-section {
-  position: relative; overflow: hidden;
+  position: relative;
   background: var(--navy-2);
 }
 .calc-inner {
   display: grid; grid-template-columns: 1fr 1fr;
-  max-width: 1140px; margin-inline: auto;
   min-height: 620px;
 }
 .calc-left {
-  padding: 6rem 4rem 6rem 2rem;
+  padding: 6rem 4rem 6rem max(2rem, calc((100vw - 1140px) / 2 + 2rem));
   display: flex; flex-direction: column; justify-content: center;
 }
 .calc-left .display-title { margin-bottom: 1rem; }
+.calc-left .display-title em { padding-right: 0.2em; }
 .calc-sub { font-size: .97rem; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 2.5rem; }
 
 .calc-form { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
