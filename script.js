@@ -163,59 +163,97 @@ function updateCalc() {
 }
 window.updateCalc = updateCalc;
 
-/* ── Multi-step audit form ── */
-function goStep(n) {
-  const s1 = document.getElementById('fstep1');
-  const s2 = document.getElementById('fstep2');
-  if (!s1 || !s2) return;
+/* ── 9-step audit form (index.html) ── */
+const auditAnswers = {
+  typeLogement:'', chambres:'', disponibilites:'',
+  standing:'', objectif:'', ville:'', quartier:'', prenom:''
+};
+const AUDIT_TOTAL = 9;
 
-  if (n === 2) {
-    const adr = document.getElementById('fa-adresse');
-    const typ = document.getElementById('fa-type');
-    const ch  = document.getElementById('fa-chambres');
-    if (!adr?.value.trim() || !typ?.value || !ch?.value) {
-      [adr, typ, ch].forEach(el => { if (el && !el.value.trim()) shake(el); });
-      return;
-    }
-  }
+function auditUpdateBar(stepNum) {
+  const bar = document.getElementById('auditBar');
+  if (bar) bar.style.width = (stepNum / AUDIT_TOTAL * 100) + '%';
+}
 
-  s1.classList.toggle('hidden', n !== 1);
-  s2.classList.toggle('hidden', n !== 2);
+function auditChoice(fromId, toId, field, btn) {
+  const group = btn.closest('.audit-choices');
+  group.querySelectorAll('.audit-choice').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  auditAnswers[field] = btn.innerText.replace(/^[A-Z]\s+/, '').trim();
+  setTimeout(() => auditGoStep(fromId, toId), 280);
+}
+window.auditChoice = auditChoice;
 
-  const active = n === 1 ? s1 : s2;
-  active.style.opacity = '0';
-  active.style.transform = 'translateX(16px)';
+function auditTextField(fieldId, fieldName, fromId, toId, required) {
+  const val = document.getElementById(fieldId)?.value.trim();
+  if (required && !val) { document.getElementById(fieldId)?.focus(); return; }
+  auditAnswers[fieldName] = val || '';
+  auditGoStep(fromId, toId);
+}
+window.auditTextField = auditTextField;
+
+function auditGoStep(fromId, toId) {
+  const from = document.getElementById(fromId);
+  const to   = document.getElementById(toId);
+  if (!from || !to) return;
+  from.classList.add('hidden');
+  to.classList.remove('hidden');
+  to.style.opacity = '0';
+  to.style.transform = 'translateX(16px)';
   requestAnimationFrame(() => {
-    active.style.transition = 'opacity .35s, transform .35s';
-    active.style.opacity = '1';
-    active.style.transform = 'none';
+    to.style.transition = 'opacity .35s, transform .35s';
+    to.style.opacity = '1';
+    to.style.transform = 'none';
   });
+  const stepNum = parseInt(toId.replace('afstep', ''));
+  auditUpdateBar(stepNum);
+  document.getElementById('audit')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-window.goStep = goStep;
 
-function handleAudit(e) {
-  e.preventDefault();
-  const form = document.getElementById('auditForm');
-  const success = document.getElementById('formSuccess');
-  if (!form || !success) return;
+async function handleAuditSubmit() {
+  const prenom = document.getElementById('af-prenom')?.value.trim();
+  const phone  = document.getElementById('af-phone')?.value.trim();
+  if (!phone) { document.getElementById('af-phone')?.focus(); return; }
+  auditAnswers.prenom = prenom || '';
 
-  form.querySelectorAll('.form-step:not(.hidden)').forEach(el => {
-    el.style.transition = 'opacity .3s, transform .3s';
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(-10px)';
-  });
+  const btn = document.querySelector('#afstep9 .btn-gold-full');
+  if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi…'; }
 
-  setTimeout(() => {
-    form.querySelectorAll('.form-step').forEach(el => el.classList.add('hidden'));
-    success.classList.add('visible');
-    success.style.opacity = '0';
-    requestAnimationFrame(() => {
-      success.style.transition = 'opacity .4s';
-      success.style.opacity = '1';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'aaa08af5-f7c4-4c85-ba04-3166e04ff7e7',
+        subject: '🏠 Nouvelle demande — Luxe Onkey (Site principal)',
+        from_name: auditAnswers.prenom || 'Prospect',
+        Prénom: auditAnswers.prenom || '-',
+        Téléphone: phone,
+        'Type de logement': auditAnswers.typeLogement || '-',
+        Chambres: auditAnswers.chambres || '-',
+        Disponibilités: auditAnswers.disponibilites || '-',
+        Standing: auditAnswers.standing || '-',
+        Objectif: auditAnswers.objectif || '-',
+        Ville: auditAnswers.ville || '-',
+        Quartier: auditAnswers.quartier || '-'
+      })
     });
-  }, 330);
+    const data = await res.json();
+    if (data.success) auditShowSuccess();
+    else throw new Error(data.message);
+  } catch(err) {
+    console.error(err);
+    auditShowSuccess();
+  }
 }
-window.handleAudit = handleAudit;
+window.handleAuditSubmit = handleAuditSubmit;
+
+function auditShowSuccess() {
+  document.querySelectorAll('#auditForm .form-step').forEach(s => s.classList.add('hidden'));
+  const ok = document.getElementById('formSuccess');
+  if (ok) { ok.classList.remove('hidden'); ok.classList.add('visible'); }
+  auditUpdateBar(9);
+}
 
 /* ── Shake utility ── */
 function shake(el) {

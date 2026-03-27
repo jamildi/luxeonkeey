@@ -732,95 +732,102 @@
 
     <div class="audit-form-box" data-reveal>
       <form id="auditForm" onsubmit="handleAudit(event)">
-        <!-- Step 1 -->
-        <div class="form-step" id="fstep1">
-          <div class="fstep-head">
-            <span class="fstep-num">1 / 2</span>
-            <h3>Votre bien</h3>
-          </div>
+        <!-- Progress bar -->
+        <div class="audit-progress"><div class="audit-progress-bar" id="auditBar"></div></div>
 
-          <div class="fg">
-            <label>Adresse du bien *</label>
-            <input type="text" id="fa-adresse" placeholder="Ville, quartier, adresse" required />
+        <!-- Step 1 : Type -->
+        <div class="form-step" id="afstep1">
+          <div class="fstep-head"><span class="fstep-num">1 / 9</span><h3>Quel type de logement possédez-vous ?</h3></div>
+          <div class="audit-choices">
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep1','afstep2','typeLogement',this)"><span class="ck">A</span> Appartement</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep1','afstep2','typeLogement',this)"><span class="ck">B</span> Villa / Maison</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep1','afstep2','typeLogement',this)"><span class="ck">C</span> Riad</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep1','afstep2','typeLogement',this)"><span class="ck">D</span> Duplex</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep1','afstep2','typeLogement',this)"><span class="ck">E</span> Autre</button>
           </div>
-          <div class="fg-row">
-            <div class="fg">
-              <label>Type *</label>
-              <select id="fa-type" required>
-                <option value="">Choisir</option>
-                <option>Studio</option>
-                <option>Appartement</option>
-                <option>Villa</option>
-                <option>Riad</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label>Chambres *</label>
-              <select id="fa-chambres" required>
-                <option value="">Choisir</option>
-                <option>1 chambre</option>
-                <option>2 chambres</option>
-                <option>3 chambres</option>
-                <option>4+</option>
-              </select>
-            </div>
-          </div>
-          <div class="fg">
-            <label>Situation actuelle</label>
-            <select>
-              <option>Bien non encore loué</option>
-              <option>Déjà en location courte durée</option>
-              <option>Déjà en location longue durée</option>
-            </select>
-          </div>
-          <button type="button" class="btn-gold-full" onclick="goStep(2)">
-            Continuer <i class="fas fa-arrow-right"></i>
-          </button>
         </div>
 
-        <!-- Step 2 -->
-        <div class="form-step hidden" id="fstep2">
-          <div class="fstep-head">
-            <span class="fstep-num">2 / 2</span>
-            <h3>Vos coordonnées</h3>
+        <!-- Step 2 : Chambres -->
+        <div class="form-step hidden" id="afstep2">
+          <div class="fstep-head"><span class="fstep-num">2 / 9</span><h3>Combien de chambres possède votre logement ?</h3></div>
+          <div class="audit-choices">
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep2','afstep3','chambres',this)"><span class="ck">A</span> Studio</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep2','afstep3','chambres',this)"><span class="ck">B</span> 2 / 3 chambres</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep2','afstep3','chambres',this)"><span class="ck">C</span> 4 chambres ou plus</button>
           </div>
+        </div>
 
-          <div class="fg-row">
-            <div class="fg">
-              <label>Prénom *</label>
-              <input type="text" placeholder="Prénom" required />
-            </div>
-            <div class="fg">
-              <label>Nom *</label>
-              <input type="text" placeholder="Nom" required />
-            </div>
+        <!-- Step 3 : Disponibilités -->
+        <div class="form-step hidden" id="afstep3">
+          <div class="fstep-head"><span class="fstep-num">3 / 9</span><h3>Quelles sont les disponibilités de votre logement ?</h3></div>
+          <div class="audit-choices">
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep3','afstep4','disponibilites',this)"><span class="ck">A</span> Immédiatement</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep3','afstep4','disponibilites',this)"><span class="ck">B</span> Sous 1 mois</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep3','afstep4','disponibilites',this)"><span class="ck">C</span> Plus d'un mois</button>
           </div>
-          <div class="fg">
-            <label>Email *</label>
-            <input type="email" placeholder="votre@email.com" required />
+        </div>
+
+        <!-- Step 4 : Standing -->
+        <div class="form-step hidden" id="afstep4">
+          <div class="fstep-head"><span class="fstep-num">4 / 9</span><h3>Quel est le standing du bien ?</h3></div>
+          <div class="audit-choices">
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep4','afstep5','standing',this)"><span class="ck">A</span> Économique</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep4','afstep5','standing',this)"><span class="ck">B</span> Entrée de gamme</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep4','afstep5','standing',this)"><span class="ck">C</span> Moyen standing</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep4','afstep5','standing',this)"><span class="ck">D</span> Haut standing</button>
           </div>
-          <div class="fg">
-            <label>WhatsApp *</label>
-            <input type="tel" placeholder="+212 6 XX XX XX XX" required />
+        </div>
+
+        <!-- Step 5 : Objectif -->
+        <div class="form-step hidden" id="afstep5">
+          <div class="fstep-head"><span class="fstep-num">5 / 9</span><h3>Quel est votre objectif principal avec la conciergerie ?</h3></div>
+          <div class="audit-choices">
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep5','afstep6','objectif',this)"><span class="ck">A</span> Rentabiliser mon investissement</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep5','afstep6','objectif',this)"><span class="ck">B</span> Entretenir mon logement</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep5','afstep6','objectif',this)"><span class="ck">C</span> Rembourser mon crédit</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep5','afstep6','objectif',this)"><span class="ck">D</span> Autre</button>
           </div>
-          <div class="fg">
-            <label>Message (optionnel)</label>
-            <textarea rows="2" placeholder="Dites-nous en plus..."></textarea>
+        </div>
+
+        <!-- Step 6 : Ville -->
+        <div class="form-step hidden" id="afstep6">
+          <div class="fstep-head"><span class="fstep-num">6 / 9</span><h3>Dans quelle ville se situe le bien ?</h3></div>
+          <div class="audit-choices">
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep6','afstep7','ville',this)"><span class="ck">A</span> Casablanca</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep6','afstep7','ville',this)"><span class="ck">B</span> Rabat</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep6','afstep7','ville',this)"><span class="ck">C</span> Marrakech</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep6','afstep7','ville',this)"><span class="ck">D</span> Tanger</button>
+            <button type="button" class="audit-choice" onclick="auditChoice('afstep6','afstep7','ville',this)"><span class="ck">E</span> Fès</button>
           </div>
-          <div class="fstep-nav">
-            <button type="button" class="btn-outline" onclick="goStep(1)">← Retour</button>
-            <button type="submit" class="btn-gold">
-              <i class="fab fa-whatsapp"></i> Recevoir mon estimation
-            </button>
-          </div>
+        </div>
+
+        <!-- Step 7 : Quartier -->
+        <div class="form-step hidden" id="afstep7">
+          <div class="fstep-head"><span class="fstep-num">7 / 9</span><h3>Dans quel quartier exact se situe le bien ?</h3></div>
+          <div class="fg"><input type="text" id="af-quartier" placeholder="Ex : Guéliz, Maarif, Agdal…" /></div>
+          <button type="button" class="btn-gold-full" onclick="auditTextField('af-quartier','quartier','afstep7','afstep8')">Continuer <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Step 8 : Prénom -->
+        <div class="form-step hidden" id="afstep8">
+          <div class="fstep-head"><span class="fstep-num">8 / 9</span><h3>Merci d'indiquer votre prénom.</h3></div>
+          <div class="fg"><input type="text" id="af-prenom" placeholder="Votre prénom" /></div>
+          <button type="button" class="btn-gold-full" onclick="auditTextField('af-prenom','prenom','afstep8','afstep9',true)">Continuer <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Step 9 : Téléphone -->
+        <div class="form-step hidden" id="afstep9">
+          <div class="fstep-head"><span class="fstep-num">9 / 9</span><h3>Votre numéro joignable via WhatsApp</h3></div>
+          <div class="fg"><input type="tel" id="af-phone" placeholder="+33 7 XX XX XX XX" /></div>
+          <button type="button" class="btn-gold-full" onclick="handleAuditSubmit()"><i class="fab fa-whatsapp"></i> Envoyer ma demande</button>
         </div>
 
         <!-- Success -->
         <div class="form-success hidden" id="formSuccess">
           <div class="success-icon"><i class="fas fa-check"></i></div>
           <h3>Demande envoyée !</h3>
-          <p>Notre équipe vous contacte dans les prochaines <strong>24 heures</strong> avec votre estimation personnalisée.</p>
-          <a href="https://wa.me/212600953731" target="_blank" class="btn-wa-full">
+          <p>Notre équipe vous contacte dans les prochaines <strong>24 heures</strong>.</p>
+          <a href="https://wa.me/33743536490" target="_blank" class="btn-wa-full">
             <i class="fab fa-whatsapp"></i> Parler maintenant sur WhatsApp
           </a>
         </div>

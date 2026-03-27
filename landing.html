@@ -800,151 +800,124 @@
 
       <!-- STEP 1 : Type de logement -->
       <div class="lp-form-step active" id="step1">
-        <div class="step-counter">Question 1 sur 6</div>
+        <div class="step-counter">Question 1 sur 9</div>
         <div class="step-q">Quel type de logement possédez-vous ?</div>
         <div class="step-hint">Sélectionnez une option pour continuer</div>
         <div class="lp-choices" id="choices1">
-          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
-            <span class="choice-key">A</span> Appartement
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
-            <span class="choice-key">B</span> Villa / Maison
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
-            <span class="choice-key">C</span> Riad
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
-            <span class="choice-key">D</span> Duplex / Penthouse
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2')">
-            <span class="choice-key">E</span> Autre
-          </button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2', 'typeLogement')"><span class="choice-key">A</span> Appartement</button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2', 'typeLogement')"><span class="choice-key">B</span> Villa / Maison</button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2', 'typeLogement')"><span class="choice-key">C</span> Riad</button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2', 'typeLogement')"><span class="choice-key">D</span> Duplex</button>
+          <button class="lp-choice" onclick="selectChoice('choices1', this, 'step1', 'step2', 'typeLogement')"><span class="choice-key">E</span> Autre</button>
         </div>
       </div>
 
-      <!-- STEP 2 : Ville -->
+      <!-- STEP 2 : Chambres -->
       <div class="lp-form-step" id="step2">
-        <div class="step-counter">Question 2 sur 6</div>
-        <div class="step-q">Dans quelle ville se situe votre logement ?</div>
-        <div class="step-hint">Nous opérons dans les principales villes du Maroc</div>
+        <div class="step-counter">Question 2 sur 9</div>
+        <div class="step-q">Combien de chambres possède votre logement ?</div>
+        <div class="step-hint">Sélectionnez une option pour continuer</div>
         <div class="lp-choices" id="choices2">
-          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
-            <span class="choice-key">A</span> Marrakech
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
-            <span class="choice-key">B</span> Casablanca
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
-            <span class="choice-key">C</span> Agadir
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
-            <span class="choice-key">D</span> Rabat
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
-            <span class="choice-key">E</span> Tanger
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
-            <span class="choice-key">F</span> Fès
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3')">
-            <span class="choice-key">G</span> Autre ville
-          </button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3', 'chambres')"><span class="choice-key">A</span> Studio</button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3', 'chambres')"><span class="choice-key">B</span> 2 / 3 chambres</button>
+          <button class="lp-choice" onclick="selectChoice('choices2', this, 'step2', 'step3', 'chambres')"><span class="choice-key">C</span> 4 chambres ou plus</button>
         </div>
       </div>
 
-      <!-- STEP 3 : Chambres -->
+      <!-- STEP 3 : Disponibilités -->
       <div class="lp-form-step" id="step3">
-        <div class="step-counter">Question 3 sur 6</div>
-        <div class="step-q">Combien de chambres compte votre logement ?</div>
-        <div class="step-hint">Hors salon et cuisine</div>
+        <div class="step-counter">Question 3 sur 9</div>
+        <div class="step-q">Quelles sont les disponibilités de votre logement ?</div>
+        <div class="step-hint">Sélectionnez une option pour continuer</div>
         <div class="lp-choices" id="choices3">
-          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
-            <span class="choice-key">A</span> Studio / T1
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
-            <span class="choice-key">B</span> 1 chambre
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
-            <span class="choice-key">C</span> 2 chambres
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
-            <span class="choice-key">D</span> 3 chambres
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4')">
-            <span class="choice-key">E</span> 4 chambres et plus
-          </button>
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4', 'disponibilites')"><span class="choice-key">A</span> Immédiatement</button>
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4', 'disponibilites')"><span class="choice-key">B</span> Sous 1 mois</button>
+          <button class="lp-choice" onclick="selectChoice('choices3', this, 'step3', 'step4', 'disponibilites')"><span class="choice-key">C</span> Plus d'un mois</button>
         </div>
       </div>
 
-      <!-- STEP 4 : Statut actuel -->
+      <!-- STEP 4 : Standing -->
       <div class="lp-form-step" id="step4">
-        <div class="step-counter">Question 4 sur 6</div>
-        <div class="step-q">Votre logement est-il déjà en location courte durée ?</div>
-        <div class="step-hint">Airbnb, Booking.com, ou autre plateforme</div>
+        <div class="step-counter">Question 4 sur 9</div>
+        <div class="step-q">Quel est le standing du bien ?</div>
+        <div class="step-hint">Sélectionnez une option pour continuer</div>
         <div class="lp-choices" id="choices4">
-          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
-            <span class="choice-key">A</span> Oui, sur Airbnb
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
-            <span class="choice-key">B</span> Oui, sur Booking.com
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
-            <span class="choice-key">C</span> Oui, sur les deux
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
-            <span class="choice-key">D</span> En location longue durée
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5')">
-            <span class="choice-key">E</span> Non, pas encore loué
-          </button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5', 'standing')"><span class="choice-key">A</span> Économique</button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5', 'standing')"><span class="choice-key">B</span> Entrée de gamme</button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5', 'standing')"><span class="choice-key">C</span> Moyen standing</button>
+          <button class="lp-choice" onclick="selectChoice('choices4', this, 'step4', 'step5', 'standing')"><span class="choice-key">D</span> Haut standing</button>
         </div>
       </div>
 
-      <!-- STEP 5 : Où résidez-vous -->
+      <!-- STEP 5 : Objectif -->
       <div class="lp-form-step" id="step5">
-        <div class="step-counter">Question 5 sur 6</div>
-        <div class="step-q">Où résidez-vous actuellement ?</div>
-        <div class="step-hint">Cela nous aide à adapter notre accompagnement</div>
+        <div class="step-counter">Question 5 sur 9</div>
+        <div class="step-q">Quel est votre objectif principal avec la conciergerie ?</div>
+        <div class="step-hint">Sélectionnez une option pour continuer</div>
         <div class="lp-choices" id="choices5">
-          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
-            <span class="choice-key">A</span> Au Maroc
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
-            <span class="choice-key">B</span> En France
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
-            <span class="choice-key">C</span> En Belgique / Suisse
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
-            <span class="choice-key">D</span> Au Canada
-          </button>
-          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6')">
-            <span class="choice-key">E</span> Autre pays
-          </button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6', 'objectif')"><span class="choice-key">A</span> Rentabiliser mon investissement</button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6', 'objectif')"><span class="choice-key">B</span> Entretenir mon logement</button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6', 'objectif')"><span class="choice-key">C</span> Rembourser mon crédit</button>
+          <button class="lp-choice" onclick="selectChoice('choices5', this, 'step5', 'step6', 'objectif')"><span class="choice-key">D</span> Autre</button>
         </div>
       </div>
 
-      <!-- STEP 6 : Coordonnées -->
+      <!-- STEP 6 : Ville -->
       <div class="lp-form-step" id="step6">
-        <div class="step-counter">Question 6 sur 6 — Dernière étape !</div>
-        <div class="step-q">Vos coordonnées</div>
-        <div class="step-hint">Un conseiller Luxe Onkey vous contacte sous 24h</div>
+        <div class="step-counter">Question 6 sur 9</div>
+        <div class="step-q">Dans quelle ville se situe le bien ?</div>
+        <div class="step-hint">Sélectionnez une option pour continuer</div>
+        <div class="lp-choices" id="choices6">
+          <button class="lp-choice" onclick="selectChoice('choices6', this, 'step6', 'step7', 'ville')"><span class="choice-key">A</span> Casablanca</button>
+          <button class="lp-choice" onclick="selectChoice('choices6', this, 'step6', 'step7', 'ville')"><span class="choice-key">B</span> Rabat</button>
+          <button class="lp-choice" onclick="selectChoice('choices6', this, 'step6', 'step7', 'ville')"><span class="choice-key">C</span> Marrakech</button>
+          <button class="lp-choice" onclick="selectChoice('choices6', this, 'step6', 'step7', 'ville')"><span class="choice-key">D</span> Tanger</button>
+          <button class="lp-choice" onclick="selectChoice('choices6', this, 'step6', 'step7', 'ville')"><span class="choice-key">E</span> Fès</button>
+        </div>
+      </div>
+
+      <!-- STEP 7 : Quartier -->
+      <div class="lp-form-step" id="step7">
+        <div class="step-counter">Question 7 sur 9</div>
+        <div class="step-q">Dans quel quartier exact se situe le bien ?</div>
+        <div class="step-hint">Ex : Guéliz, Hivernage, Maarif, Agdal…</div>
         <div class="lp-fields">
           <div class="lp-field">
-            <label>Prénom *</label>
+            <input type="text" id="fieldQuartier" placeholder="Nom du quartier" />
+          </div>
+        </div>
+        <div class="lp-form-nav">
+          <button class="lp-btn-next" onclick="nextTextField('fieldQuartier', 'quartier', 'step7', 'step8')">
+            Continuer <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 8 : Prénom -->
+      <div class="lp-form-step" id="step8">
+        <div class="step-counter">Question 8 sur 9</div>
+        <div class="step-q">Merci d'indiquer votre prénom.</div>
+        <div class="step-hint">Pour que nous puissions vous appeler par votre prénom</div>
+        <div class="lp-fields">
+          <div class="lp-field">
             <input type="text" id="fieldPrenom" placeholder="Votre prénom" required />
           </div>
+        </div>
+        <div class="lp-form-nav">
+          <button class="lp-btn-next" onclick="nextTextField('fieldPrenom', 'prenom', 'step8', 'step9', true)">
+            Continuer <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 9 : Téléphone -->
+      <div class="lp-form-step" id="step9">
+        <div class="step-counter">Question 9 sur 9 — Dernière étape !</div>
+        <div class="step-q">Votre numéro de téléphone joignable via WhatsApp</div>
+        <div class="step-hint">Nous vous contacterons sous 24h pour votre audit gratuit</div>
+        <div class="lp-fields">
           <div class="lp-field">
-            <label>Nom *</label>
-            <input type="text" id="fieldNom" placeholder="Votre nom" required />
-          </div>
-          <div class="lp-field">
-            <label>Téléphone WhatsApp *</label>
-            <input type="tel" id="fieldPhone" placeholder="+33 6 xx xx xx xx" required />
-          </div>
-          <div class="lp-field">
-            <label>Adresse e-mail *</label>
-            <input type="email" id="fieldEmail" placeholder="votre@email.com" required />
+            <input type="tel" id="fieldPhone" placeholder="+33 7 XX XX XX XX" required />
           </div>
         </div>
         <div class="lp-form-nav">
@@ -1036,15 +1009,11 @@
   </a>
 
   <script>
-    const TOTAL_STEPS = 6;
+    const TOTAL_STEPS = 9;
 
-    // Store answers from each step
     const answers = {
-      typeLogement: '',
-      ville: '',
-      chambres: '',
-      statutActuel: '',
-      residence: ''
+      typeLogement: '', chambres: '', disponibilites: '',
+      standing: '', objectif: '', ville: '', quartier: '', prenom: ''
     };
 
     function updateProgress(stepNum) {
@@ -1052,19 +1021,11 @@
       bar.style.width = (stepNum / TOTAL_STEPS * 100) + '%';
     }
 
-    function selectChoice(groupId, btn, currentStepId, nextStepId) {
+    function selectChoice(groupId, btn, currentStepId, nextStepId, fieldName) {
       document.querySelectorAll('#' + groupId + ' .lp-choice').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
-      // Save the answer text (without the key letter)
-      const text = btn.innerText.replace(/^[A-G]\s+/, '').trim();
-      const answerMap = {
-        choices1: 'typeLogement',
-        choices2: 'ville',
-        choices3: 'chambres',
-        choices4: 'statutActuel',
-        choices5: 'residence'
-      };
-      if (answerMap[groupId]) answers[answerMap[groupId]] = text;
+      const text = btn.innerText.replace(/^[A-Z]\s+/, '').trim();
+      if (fieldName) answers[fieldName] = text;
       setTimeout(() => goToStep(currentStepId, nextStepId), 280);
     }
 
@@ -1076,33 +1037,28 @@
       document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    async function submitForm() {
-      const prenom = document.getElementById('fieldPrenom').value.trim();
-      const nom    = document.getElementById('fieldNom').value.trim();
-      const phone  = document.getElementById('fieldPhone').value.trim();
-      const email  = document.getElementById('fieldEmail').value.trim();
-
-      if (!prenom || !nom || !phone || !email) {
-        alert('Merci de remplir tous les champs obligatoires.');
+    function nextTextField(fieldId, fieldName, currentStepId, nextStepId, required) {
+      const val = document.getElementById(fieldId).value.trim();
+      if (required && !val) {
+        document.getElementById(fieldId).focus();
         return;
       }
+      answers[fieldName] = val;
+      goToStep(currentStepId, nextStepId);
+    }
 
-      // Disable button to prevent double submit
-      const btn = document.querySelector('#step6 .lp-btn-next');
+    async function submitForm() {
+      const prenom = document.getElementById('fieldPrenom').value.trim();
+      const phone  = document.getElementById('fieldPhone').value.trim();
+      if (!prenom || !phone) {
+        alert('Merci de remplir tous les champs.');
+        return;
+      }
+      answers.prenom = prenom;
+
+      const btn = document.querySelector('#step9 .lp-btn-next');
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
-
-      const payload = {
-        Prénom: prenom,
-        Nom: nom,
-        Téléphone: phone,
-        Email: email,
-        'Type de logement': answers.typeLogement || 'Non renseigné',
-        Ville: answers.ville || 'Non renseigné',
-        Chambres: answers.chambres || 'Non renseigné',
-        'Statut actuel': answers.statutActuel || 'Non renseigné',
-        'Résidence': answers.residence || 'Non renseigné'
-      };
 
       try {
         const res = await fetch('https://api.web3forms.com/submit', {
@@ -1111,16 +1067,21 @@
           body: JSON.stringify({
             access_key: 'aaa08af5-f7c4-4c85-ba04-3166e04ff7e7',
             subject: '🏠 Nouvelle demande — Luxe Onkey Group',
-            from_name: prenom + ' ' + nom,
-            ...payload
+            from_name: prenom,
+            Prénom: prenom,
+            Téléphone: phone,
+            'Type de logement': answers.typeLogement || '-',
+            Chambres: answers.chambres || '-',
+            Disponibilités: answers.disponibilites || '-',
+            Standing: answers.standing || '-',
+            Objectif: answers.objectif || '-',
+            Ville: answers.ville || '-',
+            Quartier: answers.quartier || '-'
           })
         });
         const data = await res.json();
-        if (data.success) {
-          showSuccess();
-        } else {
-          throw new Error(data.message || 'Erreur serveur');
-        }
+        if (data.success) showSuccess();
+        else throw new Error(data.message);
       } catch (err) {
         console.error('Form error:', err);
         showSuccess();
@@ -1130,7 +1091,7 @@
     function showSuccess() {
       document.querySelectorAll('.lp-form-step').forEach(s => s.style.display = 'none');
       document.getElementById('formSuccess').style.display = 'block';
-      updateProgress(6);
+      updateProgress(9);
       document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
