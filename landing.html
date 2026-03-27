@@ -1093,7 +1093,6 @@
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
 
       const payload = {
-        _subject: '🏠 Nouvelle demande — Luxe Onkey Group',
         Prénom: prenom,
         Nom: nom,
         Téléphone: phone,
@@ -1102,24 +1101,27 @@
         Ville: answers.ville || 'Non renseigné',
         Chambres: answers.chambres || 'Non renseigné',
         'Statut actuel': answers.statutActuel || 'Non renseigné',
-        'Résidence': answers.residence || 'Non renseigné',
-        _template: 'table'
+        'Résidence': answers.residence || 'Non renseigné'
       };
 
       try {
-        const res = await fetch('https://formsubmit.co/ajax/luxeonkey@gmail.com', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify({
+            access_key: 'aaa08af5-f7c4-4c85-ba04-3166e04ff7e7',
+            subject: '🏠 Nouvelle demande — Luxe Onkey Group',
+            from_name: prenom + ' ' + nom,
+            ...payload
+          })
         });
         const data = await res.json();
-        if (data.success === 'true' || data.success === true) {
+        if (data.success) {
           showSuccess();
         } else {
-          throw new Error('Erreur serveur');
+          throw new Error(data.message || 'Erreur serveur');
         }
       } catch (err) {
-        // Fallback: show success anyway & log error (don't block UX)
         console.error('Form error:', err);
         showSuccess();
       }
