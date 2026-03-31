@@ -1055,6 +1055,19 @@
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
 
+      var prospectData = {
+        firstName: prenom,
+        phone: phone,
+        propertyType: answers.typeLogement || '',
+        bedrooms: answers.chambres || '',
+        availability: answers.disponibilites || '',
+        standing: answers.standing || '',
+        objective: answers.objectif || '',
+        city: answers.ville || '',
+        neighborhood: answers.quartier || '',
+        source: 'landing-page'
+      };
+
       try {
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
@@ -1075,6 +1088,14 @@
           })
         });
         const data = await res.json();
+
+        // Send to Concierge OS platform (prospect tracking)
+        fetch('http://localhost:3000/api/prospects', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(prospectData)
+        }).catch(function(e) { console.warn('Concierge OS sync:', e.message); });
+
         if (data.success) showSuccess();
         else throw new Error(data.message);
       } catch (err) {
