@@ -97,12 +97,12 @@ window.toggleFaq = toggleFaq;
 
 /* ── Revenue calculator ── */
 const revenues = {
-  marrakech:  { studio: [8000,13000],   '1': [14000,20000],  '2': [22000,35000],  '3': [35000,52000],  '4': [52000,85000]  },
-  casablanca: { studio: [6000,10000],   '1': [10000,15000],  '2': [16000,26000],  '3': [24000,38000],  '4': [38000,60000]  },
-  agadir:     { studio: [7000,12000],   '1': [12000,18000],  '2': [18000,28000],  '3': [26000,42000],  '4': [40000,65000]  },
-  rabat:      { studio: [5000,8000],    '1': [8000,13000],   '2': [14000,22000],  '3': [20000,32000],  '4': [30000,48000]  },
-  tanger:     { studio: [5000,9000],    '1': [8000,14000],   '2': [13000,22000],  '3': [19000,32000],  '4': [28000,46000]  },
-  fes:        { studio: [4000,7000],    '1': [7000,11000],   '2': [11000,18000],  '3': [16000,26000],  '4': [24000,40000]  },
+  marrakech:  { studio: [5500,8500],   '1': [9000,14000],   '2': [15000,22000],  '3': [22000,35000],  '4': [35000,55000]  },
+  casablanca: { studio: [4000,7000],   '1': [7000,11000],   '2': [11000,18000],  '3': [16000,26000],  '4': [25000,40000]  },
+  agadir:     { studio: [4500,8000],   '1': [8000,13000],   '2': [12000,20000],  '3': [18000,30000],  '4': [27000,44000]  },
+  rabat:      { studio: [3500,5500],   '1': [5500,9000],    '2': [9500,15000],   '3': [14000,22000],  '4': [20000,33000]  },
+  tanger:     { studio: [3500,6000],   '1': [5500,9500],    '2': [9000,15000],   '3': [13000,22000],  '4': [19000,32000]  },
+  fes:        { studio: [2800,4500],   '1': [4500,7500],    '2': [7500,12000],   '3': [11000,18000],  '4': [16000,26000]  },
 };
 
 function updateCalc() {
@@ -132,7 +132,7 @@ function updateCalc() {
     <div class="calc-output">
       <div class="calc-output-label">Estimation de vos revenus bruts / mois</div>
       <div class="calc-output-range">
-        <span>${min.toLocaleString('fr-FR')}</span> — ${max.toLocaleString('fr-FR')} Dhs
+        ${min.toLocaleString('fr-FR')} à <span>${max.toLocaleString('fr-FR')}</span> Dhs
       </div>
       <div class="calc-output-note">Avec Luxe Onkey · Optimisation Airbnb & Booking</div>
       <div class="calc-output-bar">
@@ -219,7 +219,21 @@ async function handleAuditSubmit() {
   const btn = document.querySelector('#afstep9 .btn-gold-full');
   if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi…'; }
 
+  const prospectData = {
+    firstName: auditAnswers.prenom || '-',
+    phone: phone,
+    propertyType: auditAnswers.typeLogement || '',
+    bedrooms: auditAnswers.chambres || '',
+    availability: auditAnswers.disponibilites || '',
+    standing: auditAnswers.standing || '',
+    objective: auditAnswers.objectif || '',
+    city: auditAnswers.ville || '',
+    neighborhood: auditAnswers.quartier || '',
+    source: 'site-web'
+  };
+
   try {
+    // Send to Web3Forms (email)
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -239,6 +253,14 @@ async function handleAuditSubmit() {
       })
     });
     const data = await res.json();
+
+    // Send to Concierge OS platform (prospect tracking)
+    fetch('https://conciergerieplateforme-tcft.vercel.app/api/prospects', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(prospectData)
+    }).catch(function(e) { console.warn('Concierge OS sync:', e.message); });
+
     if (data.success) auditShowSuccess();
     else throw new Error(data.message);
   } catch(err) {

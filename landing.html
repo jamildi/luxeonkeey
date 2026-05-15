@@ -673,7 +673,7 @@
   <!-- TOP BAR -->
   <header class="lp-topbar">
     <a href="index.html" style="display:inline-block;line-height:0;">
-      <img src="logo.webp" alt="Luxe Onkey Group" class="logo-img" />
+      <img src="logoluxeonkey.jpg" alt="Luxe Onkey Group" class="logo-img" />
     </a>
   </header>
 
@@ -980,7 +980,7 @@
       <div class="stat-lbl">Propriétaires accompagnés</div>
     </div>
     <div class="lp-stat">
-      <div class="stat-num">+40%</div>
+      <div class="stat-num">+30%</div>
       <div class="stat-lbl">De revenus en moyenne</div>
     </div>
     <div class="lp-stat">
@@ -1090,7 +1090,7 @@
         const data = await res.json();
 
         // Send to Concierge OS platform (prospect tracking)
-        fetch('http://localhost:3000/api/prospects', {
+        fetch('https://conciergerieplateforme-tcft.vercel.app/api/prospects', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(prospectData)
