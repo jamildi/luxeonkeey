@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité | Luxe Onkey Group</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Page header ── */
+    .legal-hero {
+      background: linear-gradient(155deg, rgba(11,29,58,.97) 0%, rgba(21,45,80,.95) 100%);
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 0%, rgba(201,168,76,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .legal-hero .eyebrow-gold { margin-bottom: 1rem; }
+    .legal-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+    }
+    .legal-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.5);
+      margin-top: .5rem;
+    }
+
+    /* ── Content ── */
+    .legal-content {
+      background: var(--cream);
+      padding: 6rem 2rem 8rem;
+    }
+    .legal-wrap {
+      max-width: 820px;
+      margin-inline: auto;
+    }
+
+    .legal-section {
+      background: var(--white);
+      border-radius: var(--r2);
+      border: 1px solid var(--cream-3);
+      padding: 2.5rem 2.75rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow .3s;
+    }
+    .legal-section:hover {
+      box-shadow: 0 8px 32px rgba(12,31,45,.06);
+    }
+
+    .legal-section-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1.4rem;
+      padding-bottom: .75rem;
+      border-bottom: 1.5px solid var(--cream-2);
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .legal-section-title i {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .legal-row {
+      display: flex;
+      gap: 1rem;
+      padding: .55rem 0;
+      border-bottom: 1px solid var(--cream-2);
+      font-size: .93rem;
+      line-height: 1.6;
+    }
+    .legal-row:last-child { border-bottom: none; }
+    .legal-label {
+      min-width: 200px;
+      font-weight: 600;
+      color: var(--text-2);
+      flex-shrink: 0;
+    }
+    .legal-value {
+      color: var(--text);
+    }
+    .legal-value a {
+      color: var(--gold-3);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .legal-value a:hover { color: var(--navy); }
+
+    .legal-text {
+      font-size: .93rem;
+      color: var(--text-2);
+      line-height: 1.85;
+    }
+    .legal-text p { margin-bottom: .85rem; }
+    .legal-text p:last-child { margin-bottom: 0; }
+    .legal-text ul {
+      padding-left: 1.25rem;
+      margin: .5rem 0 .85rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .legal-text ul li::marker { color: var(--gold); }
+
+    .legal-note {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      background: rgba(201,168,76,.07);
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: var(--r);
+      padding: 1rem 1.25rem;
+      margin-top: 1.25rem;
+      font-size: .88rem;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+    .legal-note i { color: var(--gold); flex-shrink: 0; margin-top: .15rem; }
+
+    .data-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: var(--cream);
+      border: 1px solid var(--cream-3);
+      border-radius: 50px;
+      padding: .3rem .85rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: .25rem .2rem;
+    }
+    .data-chip i { color: var(--gold); font-size: .72rem; }
+
+    @media (max-width: 600px) {
+      .legal-section { padding: 1.75rem 1.25rem; }
+      .legal-row { flex-direction: column; gap: .2rem; }
+      .legal-label { min-width: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav solid" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="favicon.png" alt="Luxe Onkey Group" class="logo-img" />
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#pourquoi">Pourquoi nous</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#calculateur">Estimer mes revenus</a>
+      <a href="index.html#offre">Notre offre</a>
+      <a href="index.html#temoignages">Avis</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="landing.html" class="nav-link-landing">Confier mon bien</a>
+    </nav>
+    <a href="index.html#audit" class="nav-btn">Audit gratuit →</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#pourquoi">Pourquoi nous</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#calculateur">Estimer mes revenus</a>
+    <a href="index.html#offre">Notre offre</a>
+    <a href="index.html#temoignages">Avis clients</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="landing.html" style="color:var(--gold);font-weight:600;">Confier mon bien</a>
+    <a href="index.html#audit" class="nav-mobile-cta">Demander un audit gratuit →</a>
+  </div>
+</header>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="legal-hero">
+  <span class="eyebrow-gold">Vos données, notre engagement</span>
+  <h1>Politique de confidentialité</h1>
+  <p>Dernière mise à jour : mai 2026</p>
+</section>
+
+
+<!-- ══════════ CONTENU ══════════ -->
+<section class="legal-content">
+  <div class="legal-wrap">
+
+    <!-- Responsable -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-user-shield"></i> Responsable du traitement</h2>
+      <div class="legal-row">
+        <span class="legal-label">Société</span>
+        <span class="legal-value">LUXE ONKEY Group</span>
+      </div>
+      <div class="legal-row">
+        <span class="legal-label">Siège social</span>
+        <span class="legal-value">2 Rue Essanaoubar, Étage 4, Bureau 12 — Casablanca, Maroc</span>
+      </div>
+      <div class="legal-row">
+        <span class="legal-label">Contact</span>
+        <span class="legal-value"><a href="mailto:contact@luxeonkey.com">contact@luxeonkey.com</a></span>
+      </div>
+    </div>
+
+    <!-- Données collectées -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-database"></i> Données collectées</h2>
+      <div class="legal-text">
+        <p>Nous collectons uniquement les données que vous nous transmettez volontairement via le formulaire de demande d'audit présent sur ce site :</p>
+      </div>
+      <div style="margin: 1rem 0;">
+        <span class="data-chip"><i class="fas fa-user"></i> Prénom</span>
+        <span class="data-chip"><i class="fab fa-whatsapp"></i> Numéro de téléphone (WhatsApp)</span>
+        <span class="data-chip"><i class="fas fa-home"></i> Type de logement</span>
+        <span class="data-chip"><i class="fas fa-bed"></i> Nombre de chambres</span>
+        <span class="data-chip"><i class="fas fa-map-marker-alt"></i> Ville et quartier</span>
+        <span class="data-chip"><i class="fas fa-star"></i> Standing du bien</span>
+        <span class="data-chip"><i class="fas fa-bullseye"></i> Objectif locatif</span>
+      </div>
+      <div class="legal-text">
+        <p>Par ailleurs, le pixel Meta (Facebook) dépose un cookie de mesure d'audience lors de votre visite, conformément aux règles de Meta Platforms.</p>
+      </div>
+    </div>
+
+    <!-- Finalité -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-bullseye"></i> Finalité du traitement</h2>
+      <div class="legal-text">
+        <p>Vos données sont collectées pour les seules finalités suivantes :</p>
+        <ul>
+          <li>Vous contacter afin de vous fournir une estimation personnalisée et gratuite du potentiel locatif de votre bien</li>
+          <li>Assurer le suivi de votre demande d'audit</li>
+          <li>Mesurer l'efficacité de nos campagnes publicitaires sur Meta (via le pixel Facebook)</li>
+        </ul>
+        <p>Vos données ne sont jamais utilisées à des fins commerciales autres que celles décrites ci-dessus.</p>
+      </div>
+    </div>
+
+    <!-- Base légale -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-file-signature"></i> Base légale</h2>
+      <div class="legal-text">
+        <p>Le traitement de vos données est fondé sur votre <strong>consentement</strong>, exprimé lors de la soumission du formulaire de demande d'audit sur ce site.</p>
+        <p>Vous pouvez retirer votre consentement à tout moment en nous contactant à <a href="mailto:contact@luxeonkey.com">contact@luxeonkey.com</a>.</p>
+      </div>
+    </div>
+
+    <!-- Destinataires -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-share-alt"></i> Destinataires des données</h2>
+      <div class="legal-text">
+        <p>Vos données sont accessibles exclusivement aux membres de l'équipe LUXE ONKEY Group dans le cadre du traitement de votre demande.</p>
+        <p>Elles sont également transmises à <strong>Meta Platforms, Inc.</strong> (Facebook) dans le cadre du pixel de mesure publicitaire, conformément à la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">politique de confidentialité de Meta</a>.</p>
+        <p>Vos données ne sont jamais vendues, cédées ou louées à des tiers.</p>
+      </div>
+    </div>
+
+    <!-- Conservation -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-clock"></i> Durée de conservation</h2>
+      <div class="legal-text">
+        <p>Vos données sont conservées pendant une durée maximale de <strong>3 ans</strong> à compter de votre dernier contact avec LUXE ONKEY Group.</p>
+        <p>Au-delà de ce délai, elles sont supprimées ou anonymisées.</p>
+      </div>
+    </div>
+
+    <!-- Vos droits -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-hand-paper"></i> Vos droits</h2>
+      <div class="legal-text">
+        <p>Conformément à la loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, vous disposez des droits suivants :</p>
+        <ul>
+          <li><strong>Droit d'accès</strong> : obtenir une copie des données vous concernant</li>
+          <li><strong>Droit de rectification</strong> : corriger des données inexactes ou incomplètes</li>
+          <li><strong>Droit de suppression</strong> : demander l'effacement de vos données</li>
+          <li><strong>Droit d'opposition</strong> : vous opposer à tout ou partie du traitement</li>
+        </ul>
+      </div>
+      <div class="legal-note">
+        <i class="fas fa-envelope"></i>
+        <span>Pour exercer vos droits, adressez votre demande par email à <a href="mailto:contact@luxeonkey.com">contact@luxeonkey.com</a>. Nous nous engageons à y répondre dans un délai maximum de <strong>30 jours</strong>.</span>
+      </div>
+    </div>
+
+    <!-- Droit applicable -->
+    <div class="legal-section">
+      <h2 class="legal-section-title"><i class="fas fa-balance-scale"></i> Droit applicable</h2>
+      <div class="legal-text">
+        <p>La présente politique de confidentialité est régie par le droit marocain, notamment la loi n° 09-08 relative à la protection des données personnelles.</p>
+        <p>Tout litige sera soumis à la compétence des tribunaux de Casablanca (Maroc).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="favicon.png" alt="Luxe Onkey Group" class="footer-logo-img" />
+      </div>
+      <p>Conciergerie de luxe spécialisée dans la gestion de biens en location courte et longue durée au Maroc.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/luxe.onkey/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61589228069238" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/33743536490" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="index.html#services">Communication voyageurs</a>
+      <a href="index.html#services">Check-in / Check-out</a>
+      <a href="index.html#services">Ménage &amp; linge</a>
+      <a href="index.html#services">Revenue management</a>
+      <a href="index.html#services">Optimisation des annonces</a>
+      <a href="index.html#services">Maintenance</a>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html#pourquoi">Pourquoi Luxe Onkey ?</a>
+      <a href="index.html#calculateur">Simulateur de revenus</a>
+      <a href="index.html#processus">Comment ça marche</a>
+      <a href="index.html#offre">Notre offre 20%</a>
+      <a href="index.html#temoignages">Avis propriétaires</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/33743536490"><i class="fab fa-whatsapp"></i> +33 7 43 53 64 90</a>
+      <a href="mailto:contact@luxeonkey.com"><i class="fas fa-envelope"></i> contact@luxeonkey.com</a>
+      <p class="footer-loc"><i class="fas fa-map-marker-alt"></i> Rabat · Casablanca · Marrakech · Agadir · Tanger</p>
+      <div class="footer-wa-wrap">
+        <a href="https://wa.me/33743536490" target="_blank" class="footer-wa">
+          <i class="fab fa-whatsapp"></i> Nous écrire sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Luxe Onkey Group · Tous droits réservés</span>
+    <div class="footer-bottom-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const burger = document.getElementById('burger');
+  const navMobile = document.getElementById('navMobile');
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    navMobile?.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

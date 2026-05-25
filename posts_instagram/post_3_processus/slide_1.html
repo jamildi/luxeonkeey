@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Post 3 — Slide 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy:#0B1D3A; --gold:#C9A84C; }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--navy);
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    flex-shrink: 0;
+    transform-origin: top left;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 64px;
+    border: 2px solid rgba(201,168,76,0.75);
+    pointer-events: none;
+    z-index: 3;
+  }
+  .slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 380px;
+    background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 96px;
+    width: 100%;
+  }
+
+  .tag {
+    font-size: 20px; font-weight: 500;
+    letter-spacing: 6px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 56px;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 118px; font-weight: 300;
+    line-height: 1.0; color: #fff;
+    margin-bottom: 8px;
+  }
+  .headline-gold {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 108px; font-weight: 300;
+    font-style: italic; line-height: 1.05;
+    color: var(--gold); margin-bottom: 52px;
+  }
+
+  .divider {
+    width: 80px; height: 1px;
+    background: var(--gold); margin-bottom: 52px;
+  }
+
+  .sub {
+    font-size: 26px; font-weight: 300;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(255,255,255,0.50); margin-bottom: 64px;
+  }
+
+  /* Étapes — cartes horizontales */
+  .steps-row {
+    display: flex;
+    align-items: stretch;
+    gap: 3px;
+    width: 100%;
+  }
+
+  .step-pill {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 20px;
+    border: 1px solid rgba(201,168,76,0.20);
+    background: rgba(201,168,76,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+  .step-pill::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.55;
+  }
+
+  .step-num {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    border: 2px solid rgba(201,168,76,0.65);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; color: var(--gold);
+    background: rgba(201,168,76,0.07);
+  }
+  .step-lbl {
+    font-size: 22px; font-weight: 500;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.80);
+    text-align: center;
+  }
+  .step-timing {
+    font-size: 16px; font-weight: 400;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(201,168,76,0.60);
+  }
+
+  .num {
+    position: absolute; bottom: 88px; left: 88px;
+    font-size: 18px; letter-spacing: 4px;
+    color: rgba(201,168,76,0.65); font-weight: 400; z-index: 3;
+  }
+  .swipe {
+    position: absolute; bottom: 88px; right: 88px;
+    font-size: 18px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(201,168,76,0.85); font-weight: 400; z-index: 3;
+  }
+</style>
+</head>
+<body>
+<div class="slide" id="slide">
+  <div class="inner">
+    <div class="tag">Luxe Onkey &nbsp;·&nbsp; Notre Processus</div>
+    <div class="headline">3 étapes.</div>
+    <div class="headline-gold">Des revenus garantis.</div>
+    <div class="divider"></div>
+    <div class="sub">Simple. Rapide. Efficace.</div>
+    <div class="steps-row">
+      <div class="step-pill">
+        <div class="step-num">1</div>
+        <div class="step-lbl">Audit</div>
+        <div class="step-timing">Semaine 1</div>
+      </div>
+      <div class="step-pill">
+        <div class="step-num">2</div>
+        <div class="step-lbl">Mise en ligne</div>
+        <div class="step-timing">Semaine 2</div>
+      </div>
+      <div class="step-pill">
+        <div class="step-num">3</div>
+        <div class="step-lbl">Revenus</div>
+        <div class="step-timing">Dès le 1er séjour</div>
+      </div>
+    </div>
+  </div>
+  <div class="num">01 / 03</div>
+  <div class="swipe">Glissez</div>
+</div>
+<script>
+  function fit() {
+    const s = document.getElementById('slide');
+    const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1350);
+    s.style.transform = `scale(${scale})`;
+    s.style.marginLeft = ((window.innerWidth - 1080 * scale) / 2) + 'px';
+    s.style.marginTop  = ((window.innerHeight - 1350 * scale) / 2) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>

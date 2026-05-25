@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Post 3 — Slide 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy:#0B1D3A; --gold:#C9A84C; }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--navy);
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    flex-shrink: 0;
+    transform-origin: top left;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    padding: 72px 80px 64px;
+    font-family: 'Inter', sans-serif;
+  }
+  .slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 260px;
+    background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .section-label {
+    font-size: 20px; font-weight: 500;
+    letter-spacing: 6px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px; font-weight: 300;
+    line-height: 1.0; color: #fff;
+  }
+  .title-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px; font-weight: 300;
+    font-style: italic; line-height: 1.05; color: var(--gold);
+  }
+  .rule {
+    width: 56px; height: 1px;
+    background: var(--gold); margin: 20px 0 28px;
+  }
+
+  /* Timeline verticale */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-block {
+    display: flex;
+    gap: 36px;
+    flex: 1;
+    position: relative;
+  }
+
+  /* Ligne verticale reliant les étapes */
+  .step-block:not(:last-child) .step-line-wrap::after {
+    content: '';
+    position: absolute;
+    top: 72px;
+    left: 33px;
+    width: 2px;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(201,168,76,0.55) 0%, rgba(201,168,76,0.10) 100%);
+  }
+
+  .step-line-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 4px;
+  }
+
+  .step-circle {
+    width: 68px; height: 68px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: rgba(201,168,76,0.09);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300;
+    color: var(--gold); line-height: 1;
+  }
+
+  .step-content {
+    flex: 1;
+    padding: 4px 0 36px;
+  }
+
+  .step-tag {
+    font-size: 18px; font-weight: 500;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px; font-weight: 300;
+    color: #fff; line-height: 1.05;
+    margin-bottom: 18px;
+  }
+  .step-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 24px; font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.35;
+  }
+  .detail-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.70);
+    flex-shrink: 0;
+  }
+
+  .footer {
+    position: relative; z-index: 2;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 28px 0 0;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+  .num { font-size: 18px; letter-spacing: 4px; color: rgba(255,255,255,0.2); }
+  .handle { font-size: 18px; letter-spacing: 4px; color: rgba(201,168,76,0.55); }
+</style>
+</head>
+<body>
+<div class="slide" id="slide">
+  <div class="section-label">Comment ça marche</div>
+  <div class="title">Le processus</div>
+  <div class="title-italic">étape par étape.</div>
+  <div class="rule"></div>
+
+  <div class="timeline">
+    <div class="step-block">
+      <div class="step-line-wrap">
+        <div class="step-circle"><span class="step-n">1</span></div>
+      </div>
+      <div class="step-content">
+        <div class="step-tag">Semaine 1</div>
+        <div class="step-title">Audit &amp; estimation</div>
+        <div class="step-detail">
+          <div class="detail-item"><span class="detail-dot"></span>Visite ou photos de votre bien</div>
+          <div class="detail-item"><span class="detail-dot"></span>Estimation du revenu potentiel</div>
+          <div class="detail-item"><span class="detail-dot"></span>Offre personnalisée, sans engagement</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-line-wrap">
+        <div class="step-circle"><span class="step-n">2</span></div>
+      </div>
+      <div class="step-content">
+        <div class="step-tag">Semaine 2</div>
+        <div class="step-title">Mise en ligne</div>
+        <div class="step-detail">
+          <div class="detail-item"><span class="detail-dot"></span>Shooting photo professionnel</div>
+          <div class="detail-item"><span class="detail-dot"></span>Annonces optimisées multi-plateformes</div>
+          <div class="detail-item"><span class="detail-dot"></span>Tarification dynamique activée</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-line-wrap">
+        <div class="step-circle"><span class="step-n">3</span></div>
+      </div>
+      <div class="step-content">
+        <div class="step-tag">Dès le 1er séjour</div>
+        <div class="step-title">Revenus &amp; sérénité</div>
+        <div class="step-detail">
+          <div class="detail-item"><span class="detail-dot"></span>Gestion complète 24h/7j</div>
+          <div class="detail-item"><span class="detail-dot"></span>Virement mensuel automatique</div>
+          <div class="detail-item"><span class="detail-dot"></span>Rapport de performance mensuel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="num">02 / 03</div>
+    <div class="handle">@luxe.onkey</div>
+  </div>
+</div>
+<script>
+  function fit() {
+    const s = document.getElementById('slide');
+    const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1350);
+    s.style.transform = `scale(${scale})`;
+    s.style.marginLeft = ((window.innerWidth - 1080 * scale) / 2) + 'px';
+    s.style.marginTop  = ((window.innerHeight - 1350 * scale) / 2) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>

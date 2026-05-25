@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Post 1 — Slide 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy:#0B1D3A; --gold:#C9A84C; }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--navy);
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    flex-shrink: 0;
+    transform-origin: top left;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 80px 72px;
+    font-family: 'Inter', sans-serif;
+  }
+  .slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 240px;
+    background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .section-label {
+    font-size: 20px; font-weight: 500;
+    letter-spacing: 6px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px; font-weight: 300;
+    line-height: 1.05; color: #fff;
+  }
+  .title-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px; font-weight: 300;
+    font-style: italic; line-height: 1.1;
+    color: var(--gold);
+  }
+  .rule {
+    width: 56px; height: 1px;
+    background: var(--gold);
+    margin: 24px 0 32px;
+  }
+  .intro {
+    font-size: 28px; font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+  }
+  .team-col {
+    display: flex; flex-direction: column;
+    gap: 16px; flex: 1;
+    position: relative; z-index: 2;
+  }
+  .tcard {
+    display: flex; align-items: center;
+    gap: 32px; padding: 32px 36px;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(255,255,255,0.025);
+    position: relative; flex: 1;
+  }
+  .tcard::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(180deg, transparent, var(--gold) 40%, var(--gold) 60%, transparent);
+  }
+  .avatar {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.35);
+    overflow: hidden; flex-shrink: 0;
+    background: rgba(201,168,76,0.08);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar-init {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 300;
+    color: var(--gold);
+  }
+  .info { flex: 1; }
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px; font-weight: 400;
+    color: #fff; line-height: 1.2; margin-bottom: 6px;
+  }
+  .role {
+    font-size: 16px; font-weight: 500;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .desc {
+    font-size: 22px; font-weight: 300;
+    color: rgba(255,255,255,0.60); line-height: 1.5;
+  }
+  .num {
+    position: absolute; bottom: 48px; left: 80px;
+    font-size: 18px; letter-spacing: 4px;
+    color: rgba(255,255,255,0.2);
+  }
+  .handle {
+    position: absolute; bottom: 48px; right: 80px;
+    font-size: 18px; letter-spacing: 4px;
+    color: rgba(201,168,76,0.5);
+  }
+</style>
+</head>
+<body>
+<div class="slide" id="slide">
+  <div class="section-label">Qui sommes-nous</div>
+  <div class="title">Trois associés,</div>
+  <div class="title-italic">une vision partagée.</div>
+  <div class="rule"></div>
+  <div class="intro">Ingénieurs de formation, passionnés d'immobilier premium, nous avons créé Luxe Onkey pour que chaque propriétaire MRE puisse rentabiliser son bien au Maroc sans lever le petit doigt.</div>
+
+  <div class="team-col">
+    <div class="tcard">
+      <div class="avatar">
+        <img src="../../photo-jamil.jpg.webp" alt="Jamil" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="avatar-init" style="display:none">J</span>
+      </div>
+      <div class="info">
+        <div class="name">Jamil El Mahmoud</div>
+        <div class="role">Ingénieur · Co-fondateur</div>
+        <div class="desc">Stratégie locative & optimisation des revenus</div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="avatar">
+        <img src="../../photo-merouane.jpg.webp" alt="Mérouane" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="avatar-init" style="display:none">M</span>
+      </div>
+      <div class="info">
+        <div class="name">Mérouane Bouteldja</div>
+        <div class="role">Promoteur Immobilier · Co-fondateur</div>
+        <div class="desc">Expertise du marché immobilier marocain</div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="avatar">
+        <img src="../../Gemini_Generated_Image_tkllebtkllebtkll.png" alt="Walid" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="avatar-init" style="display:none">W</span>
+      </div>
+      <div class="info">
+        <div class="name">Walid Aissaoui</div>
+        <div class="role">Ingénieur · Co-fondateur</div>
+        <div class="desc">Pilotage opérationnel & satisfaction client</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="num">02 / 03</div>
+  <div class="handle">@luxe.onkey</div>
+</div>
+<script>
+  function fit() {
+    const s = document.getElementById('slide');
+    const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1350);
+    s.style.transform = `scale(${scale})`;
+    s.style.marginLeft = ((window.innerWidth - 1080 * scale) / 2) + 'px';
+    s.style.marginTop  = ((window.innerHeight - 1350 * scale) / 2) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>

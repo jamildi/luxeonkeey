@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Bannière Facebook — Luxe Onkey</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy:#0B1D3A; --gold:#C9A84C; }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: #111;
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .banner {
+    width: 1640px;
+    height: 624px;
+    flex-shrink: 0;
+    transform-origin: top left;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ── Fond : grille de points subtile ── */
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle, rgba(201,168,76,0.10) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Lueur centrale ── */
+  .glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px; height: 500px;
+    background: radial-gradient(ellipse at center,
+      rgba(201,168,76,0.10) 0%,
+      rgba(201,168,76,0.04) 40%,
+      transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Lueur gauche ── */
+  .glow-left {
+    position: absolute;
+    top: 0; left: -100px; bottom: 0;
+    width: 500px;
+    background: radial-gradient(ellipse at left center,
+      rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Cadre intérieur ── */
+  .frame {
+    position: absolute;
+    inset: 36px;
+    border: 1px solid rgba(201,168,76,0.55);
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* coins décorés */
+  .frame::before, .frame::after {
+    content: '';
+    position: absolute;
+    width: 28px; height: 28px;
+    border-color: var(--gold);
+    border-style: solid;
+    opacity: 0.85;
+  }
+  .frame::before {
+    top: -2px; left: -2px;
+    border-width: 2px 0 0 2px;
+  }
+  .frame::after {
+    bottom: -2px; right: -2px;
+    border-width: 0 2px 2px 0;
+  }
+
+  /* ── Séparateur vertical central ── */
+  .sep {
+    position: absolute;
+    top: 80px; bottom: 80px;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(180deg,
+      transparent,
+      rgba(201,168,76,0.40) 30%,
+      rgba(201,168,76,0.40) 70%,
+      transparent);
+    z-index: 2;
+  }
+
+  /* ── Layout principal ── */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    padding: 0 100px;
+    gap: 0;
+  }
+
+  /* GAUCHE — identité de marque */
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    padding-right: 80px;
+  }
+
+  .brand-tag {
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 8px; text-transform: uppercase;
+    color: rgba(201,168,76,0.70);
+    margin-bottom: 20px;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 96px; font-weight: 300;
+    color: #fff; line-height: 0.9;
+    margin-bottom: 6px;
+    letter-spacing: -1px;
+  }
+  .brand-name span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .brand-sub {
+    font-size: 18px; font-weight: 400;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 40px;
+  }
+
+  .divider-h {
+    width: 64px; height: 1px;
+    background: var(--gold);
+    margin-bottom: 32px;
+    opacity: 0.80;
+  }
+
+  .cities {
+    font-size: 15px; font-weight: 400;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(201,168,76,0.65);
+  }
+
+  /* DROITE — valeur ajoutée */
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 80px;
+    gap: 28px;
+  }
+
+  .right-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px; font-weight: 300;
+    color: #fff; line-height: 1.2;
+  }
+  .right-title em { color: var(--gold); font-style: italic; }
+
+  .kpis {
+    display: flex;
+    gap: 40px;
+  }
+  .kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .kpi-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px; font-weight: 300;
+    color: var(--gold); line-height: 1;
+    letter-spacing: -1px;
+  }
+  .kpi-num sup {
+    font-size: 30px; color: rgba(201,168,76,0.65);
+    vertical-align: super;
+  }
+  .kpi-lbl {
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .kpi-sep {
+    width: 1px;
+    background: rgba(201,168,76,0.20);
+    align-self: stretch;
+    margin: 6px 0;
+  }
+
+  .cta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cta-line {
+    font-size: 16px; font-weight: 500;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .cta-handle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-style: italic;
+    color: rgba(255,255,255,0.60);
+  }
+</style>
+</head>
+<body>
+<div class="banner" id="banner">
+  <div class="glow-left"></div>
+  <div class="glow"></div>
+  <div class="frame"></div>
+  <div class="sep"></div>
+
+  <div class="content">
+    <!-- GAUCHE -->
+    <div class="left">
+      <div class="brand-tag">Conciergerie Premium</div>
+      <div class="brand-name">Luxe<br><span>Onkey.</span></div>
+      <div class="brand-sub">Gestion locative au Maroc</div>
+      <div class="divider-h"></div>
+      <div class="cities">Casa &nbsp;·&nbsp; Rabat &nbsp;·&nbsp; Marrakech &nbsp;·&nbsp; Agadir &nbsp;·&nbsp; Tanger</div>
+    </div>
+
+    <!-- DROITE -->
+    <div class="right">
+      <div class="right-title">
+        Votre bien génère.<br><em>Vous profitez.</em>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-num">+30<sup>%</sup></div>
+          <div class="kpi-lbl">De revenus</div>
+        </div>
+        <div class="kpi-sep"></div>
+        <div class="kpi">
+          <div class="kpi-num">0<sup style="font-size:26px">h</sup></div>
+          <div class="kpi-lbl">De gestion</div>
+        </div>
+        <div class="kpi-sep"></div>
+        <div class="kpi">
+          <div class="kpi-num">4,9<sup>★</sup></div>
+          <div class="kpi-lbl">Note Airbnb</div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <div class="cta-line">Audit gratuit en 48h</div>
+        <div class="cta-handle">@luxe.onkey</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function fit() {
+    const b = document.getElementById('banner');
+    const scaleX = window.innerWidth / 1640;
+    const scaleY = window.innerHeight / 624;
+    const scale = Math.min(scaleX, scaleY);
+    b.style.transform = `scale(${scale})`;
+    b.style.marginLeft = ((window.innerWidth  - 1640 * scale) / 2) + 'px';
+    b.style.marginTop  = ((window.innerHeight -  624 * scale) / 2) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>

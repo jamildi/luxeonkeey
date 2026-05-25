@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Luxe Onkey — Posts Instagram</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0B1D3A;
+    --gold: #C9A84C;
+    --gold-dim: rgba(201,168,76,0.25);
+    --white: #ffffff;
+    --white-dim: rgba(255,255,255,0.6);
+    --white-faint: rgba(255,255,255,0.35);
+  }
+
+  body {
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 48px 24px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ── SLIDE : 1080 × 1350 portrait 4:5 ── */
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 1 — COVER
+  ══════════════════════════════════════════ */
+  .s1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* fines lignes dorées qui encadrent */
+  .s1::before {
+    content: '';
+    position: absolute;
+    inset: 64px;
+    border: 1px solid rgba(201,168,76,0.3);
+    pointer-events: none;
+  }
+
+  /* lueur or subtile en bas */
+  .s1::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 320px;
+    background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .s1-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 80px;
+    gap: 0;
+  }
+
+  .tag {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 72px;
+  }
+
+  .s1-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+  }
+
+  .s1-headline-gold {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.05;
+    color: var(--gold);
+    letter-spacing: -1px;
+    margin-bottom: 60px;
+  }
+
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 60px;
+  }
+
+  .s1-sub {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    margin-bottom: 48px;
+  }
+
+  .cities {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.5);
+  }
+
+  .s1-swipe {
+    position: absolute;
+    bottom: 88px;
+    right: 88px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.5);
+  }
+
+  .s1-num {
+    position: absolute;
+    bottom: 88px;
+    left: 88px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 2 — ÉQUIPE
+  ══════════════════════════════════════════ */
+  .s2 {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 80px 72px;
+  }
+
+  .s2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 240px;
+    background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .section-label {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .slide-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px;
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+  }
+
+  .slide-title-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.1;
+    color: var(--gold);
+  }
+
+  .title-rule {
+    width: 56px;
+    height: 1px;
+    background: var(--gold);
+    margin: 24px 0 32px;
+  }
+
+  .intro {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--white-dim);
+    margin-bottom: 40px;
+    max-width: 900px;
+  }
+
+  /* 3 cartes verticales */
+  .team-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tcard {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 36px;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(255,255,255,0.025);
+    position: relative;
+    flex: 1;
+  }
+
+  .tcard::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--gold) 40%, var(--gold) 60%, transparent);
+  }
+
+  .tcard-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.35);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: rgba(201,168,76,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tcard-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tcard-initial {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--gold);
+  }
+
+  .tcard-info { flex: 1; }
+
+  .tcard-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .tcard-role {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .tcard-desc {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--white-faint);
+    line-height: 1.5;
+  }
+
+  .slide-num-bottom {
+    position: absolute;
+    bottom: 48px;
+    left: 80px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.2);
+  }
+
+  .handle-bottom {
+    position: absolute;
+    bottom: 48px;
+    right: 80px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: rgba(201,168,76,0.5);
+  }
+
+  /* ══════════════════════════════════════════
+     SLIDE 3 — CHIFFRES
+  ══════════════════════════════════════════ */
+  .s3 {
+    display: flex;
+    flex-direction: column;
+    padding: 96px 80px 80px;
+  }
+
+  .s3::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 300px;
+    background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .stats-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin-bottom: 3px;
+    flex: 1;
+  }
+
+  .stat {
+    padding: 56px 52px;
+    border: 1px solid rgba(201,168,76,0.12);
+    background: rgba(255,255,255,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 60%);
+    opacity: 0.5;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .stat-num sup {
+    font-size: 60px;
+    letter-spacing: 0;
+    vertical-align: super;
+    color: rgba(201,168,76,0.65);
+  }
+
+  .stat-lbl {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .s3-footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 0;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    margin-top: 3px;
+  }
+
+  .commission {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .comm-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: var(--white);
+  }
+
+  .comm-main strong { color: var(--gold); font-weight: 500; }
+
+  .comm-sub {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white-faint);
+  }
+
+  .cta-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cta-label {
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .cta-handle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-style: italic;
+    color: var(--white-dim);
+  }
+
+  /* ── LABEL page ── */
+  .pg-label {
+    color: rgba(255,255,255,0.25);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-bottom: -32px;
+  }
+</style>
+</head>
+<body>
+
+<p class="pg-label">Slide 1 / 3</p>
+
+<!-- ══ SLIDE 1 ══ -->
+<div class="slide s1">
+  <div class="s1-inner">
+    <div class="tag">Luxe Onkey &nbsp;·&nbsp; Conciergerie Premium</div>
+    <div class="s1-headline">Trois ingénieurs.</div>
+    <div class="s1-headline-gold">Une obsession.</div>
+    <div class="divider"></div>
+    <div class="s1-sub">Gestion locative premium au Maroc</div>
+    <div class="cities">Casablanca &nbsp;·&nbsp; Rabat &nbsp;·&nbsp; Marrakech &nbsp;·&nbsp; Agadir &nbsp;·&nbsp; Tanger</div>
+  </div>
+  <div class="s1-num">01 / 03</div>
+  <div class="s1-swipe">Glissez</div>
+</div>
+
+<p class="pg-label">Slide 2 / 3</p>
+
+<!-- ══ SLIDE 2 ══ -->
+<div class="slide s2">
+  <div class="section-label">Qui sommes-nous</div>
+  <div class="slide-title">Trois associés,</div>
+  <div class="slide-title-italic">une vision partagée.</div>
+  <div class="title-rule"></div>
+  <div class="intro">Ingénieurs de formation, passionnés d'immobilier premium, nous avons créé Luxe Onkey pour que chaque propriétaire MRE puisse rentabiliser son bien au Maroc sans lever le petit doigt.</div>
+
+  <div class="team-col">
+    <div class="tcard">
+      <div class="tcard-avatar">
+        <img src="photo-jamil.jpg.webp" alt="Jamil" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="tcard-initial" style="display:none">J</span>
+      </div>
+      <div class="tcard-info">
+        <div class="tcard-name">Jamil El Mahmoud</div>
+        <div class="tcard-role">Ingénieur · Co-fondateur</div>
+        <div class="tcard-desc">Stratégie locative & optimisation des revenus</div>
+      </div>
+    </div>
+
+    <div class="tcard">
+      <div class="tcard-avatar">
+        <img src="photo-merouane.jpg.webp" alt="Mérouane" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="tcard-initial" style="display:none">M</span>
+      </div>
+      <div class="tcard-info">
+        <div class="tcard-name">Mérouane Bouteldja</div>
+        <div class="tcard-role">Promoteur Immobilier · Co-fondateur</div>
+        <div class="tcard-desc">Expertise du marché immobilier marocain</div>
+      </div>
+    </div>
+
+    <div class="tcard">
+      <div class="tcard-avatar">
+        <img src="Gemini_Generated_Image_tkllebtkllebtkll.png" alt="Walid" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="tcard-initial" style="display:none">W</span>
+      </div>
+      <div class="tcard-info">
+        <div class="tcard-name">Walid Aissaoui</div>
+        <div class="tcard-role">Ingénieur · Co-fondateur</div>
+        <div class="tcard-desc">Pilotage opérationnel & satisfaction client</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-num-bottom">02 / 03</div>
+  <div class="handle-bottom">@luxe.onkey</div>
+</div>
+
+<p class="pg-label">Slide 3 / 3</p>
+
+<!-- ══ SLIDE 3 ══ -->
+<div class="slide s3">
+  <div class="section-label">Nos résultats</div>
+  <div class="slide-title">Des chiffres qui</div>
+  <div class="slide-title-italic">parlent d'eux-mêmes.</div>
+  <div class="title-rule"></div>
+
+  <div class="stats-2x2">
+    <div class="stat">
+      <div class="stat-num">20<sup>+</sup></div>
+      <div class="stat-lbl">Biens gérés au Maroc</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4,9<sup>★</sup></div>
+      <div class="stat-lbl">Note moyenne Airbnb</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">+40<sup>%</sup></div>
+      <div class="stat-lbl">De revenus générés</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">0<sup style="font-size:36px">h</sup></div>
+      <div class="stat-lbl">De gestion pour vous</div>
+    </div>
+  </div>
+
+  <div class="s3-footer">
+    <div class="commission">
+      <div class="comm-main"><strong>20% HT</strong> · Tout compris</div>
+      <div class="comm-sub">Aucun frais caché · Sans engagement minimum</div>
+    </div>
+    <div class="cta-right">
+      <div class="cta-label">Audit gratuit</div>
+      <div class="cta-handle">@luxe.onkey</div>
+    </div>
+  </div>
+
+  <div class="slide-num-bottom">03 / 03</div>
+</div>
+
+</body>
+</html>

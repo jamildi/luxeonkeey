@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Post 2 — Slide 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy:#0B1D3A; --gold:#C9A84C; }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--navy);
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    flex-shrink: 0;
+    transform-origin: top left;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Cadre doré */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 64px;
+    border: 2px solid rgba(201,168,76,0.75);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Lueur basse */
+  .slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 360px;
+    background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Accent diagonal haut-droite */
+  .corner-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 320px; height: 320px;
+    background: radial-gradient(ellipse at top right, rgba(201,168,76,0.07) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 96px;
+    width: 100%;
+  }
+
+  .tag {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 72px;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 128px;
+    font-weight: 300;
+    line-height: 1.0;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .headline-gold {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 118px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.05;
+    color: var(--gold);
+    margin-bottom: 48px;
+  }
+
+  .divider {
+    width: 80px; height: 1px;
+    background: var(--gold);
+    margin-bottom: 48px;
+  }
+
+  .promise {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 44px;
+  }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    align-items: center;
+  }
+  .svc-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.85);
+  }
+  .svc-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .num {
+    position: absolute;
+    bottom: 88px; left: 88px;
+    font-size: 18px; letter-spacing: 4px;
+    color: rgba(201,168,76,0.65);
+    font-weight: 400;
+    z-index: 3;
+  }
+  .swipe {
+    position: absolute;
+    bottom: 88px; right: 88px;
+    font-size: 18px; letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.85);
+    font-weight: 400;
+    z-index: 3;
+  }
+</style>
+</head>
+<body>
+<div class="slide" id="slide">
+  <div class="corner-accent"></div>
+  <div class="inner">
+    <div class="tag">Luxe Onkey &nbsp;·&nbsp; Gestion Complète</div>
+    <div class="headline">Votre bien.</div>
+    <div class="headline-gold">On s'occupe de tout.</div>
+    <div class="divider"></div>
+    <div class="promise">De A à Z. Sans exception.</div>
+    <div class="services-list">
+      <div class="svc-item"><span class="svc-dot"></span>Accueil &amp; gestion des voyageurs</div>
+      <div class="svc-item"><span class="svc-dot"></span>Ménage, linge &amp; maintenance</div>
+      <div class="svc-item"><span class="svc-dot"></span>Tarification dynamique &amp; annonces</div>
+      <div class="svc-item"><span class="svc-dot"></span>Reporting mensuel transparent</div>
+    </div>
+  </div>
+  <div class="num">01 / 03</div>
+  <div class="swipe">Glissez</div>
+</div>
+<script>
+  function fit() {
+    const s = document.getElementById('slide');
+    const scaleX = window.innerWidth / 1080;
+    const scaleY = window.innerHeight / 1350;
+    const scale = Math.min(scaleX, scaleY);
+    s.style.transform = `scale(${scale})`;
+    s.style.marginLeft = ((window.innerWidth - 1080 * scale) / 2) + 'px';
+    s.style.marginTop  = ((window.innerHeight - 1350 * scale) / 2) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>
